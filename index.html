@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teanaway Sock Co. — Coolmax &amp; Merino Socks | Cle Elum, WA</title>
+<meta name="description" content="Coolmax and merino socks built for broken ground. Three weights, tested in the Teanaway. Cle Elum, Washington.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;
+  --ink:#0B0B0B;
+  --body-ink:#26282A;
+  --mid:#6B6E70;
+  --fog:#F1F1EF;
+  --hair:#DDDEDC;
+  --night:#101112;
+
+  --display:'Inter Tight',-apple-system,Helvetica Neue,Arial,sans-serif;
+  --text:'Inter',-apple-system,Helvetica Neue,Arial,sans-serif;
+
+  --gutter:clamp(18px,3.6vw,52px);
+  --max:1560px;
+  --gap:8px;
+  --pad:clamp(56px,7.5vw,116px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.001ms!important;animation-duration:.001ms!important}
+}
+body{
+  background:var(--white);color:var(--body-ink);
+  font-family:var(--text);font-size:15px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.solid :focus-visible,.onlight :focus-visible{outline-color:var(--ink)}
+.hero :focus-visible,.dark :focus-visible{outline-color:#fff}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+/* ---------- type roles ---------- */
+h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.02em;line-height:1.06;color:var(--ink)}
+.eyebrow{
+  font-family:var(--display);font-weight:500;font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--mid);
+}
+.meta{font-size:12.5px;letter-spacing:.02em;color:var(--mid)}
+
+/* ---------- buttons + links ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:500;font-size:14px;letter-spacing:.01em;
+  height:46px;padding:0 26px;border:1px solid transparent;border-radius:2px;
+  cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease;
+  white-space:nowrap;
+}
+.btn-light{background:#fff;color:var(--ink);border-color:#fff}
+.btn-light:hover{background:rgba(255,255,255,.82);border-color:rgba(255,255,255,.82)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)}
+.btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
+.btn-dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn-dark:hover{background:#333537;border-color:#333537}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:#fff}
+
+.tlink{
+  display:inline-block;font-family:var(--display);font-weight:500;font-size:13.5px;
+  border-bottom:1px solid currentColor;padding-bottom:2px;
+  transition:opacity .18s ease;
+}
+.tlink:hover{opacity:.6}
+
+/* ---------- promo bar ---------- */
+.promo{
+  background:var(--ink);color:#EDEDEB;
+  font-size:12px;letter-spacing:.03em;text-align:center;
+  padding:9px 16px;position:relative;z-index:70;
+}
+.promo span{color:#9A9D9E}
+
+/* ---------- header ---------- */
+header{position:fixed;top:36px;left:0;right:0;z-index:60;transition:background .28s ease,border-color .28s ease,top .28s ease}
+header.solid{top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+.nav{display:flex;align-items:center;gap:clamp(18px,3vw,44px);height:64px;color:#fff;transition:color .28s ease}
+header.solid .nav{color:var(--ink)}
+.mark{
+  font-family:var(--display);font-weight:600;font-size:18px;
+  letter-spacing:.24em;text-transform:uppercase;padding-left:.24em;flex:0 0 auto;line-height:1;
+}
+.nav ul{display:flex;gap:clamp(14px,2vw,30px);list-style:none;align-items:center;flex:1}
+.nav ul a{
+  font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.09em;text-transform:uppercase;
+  padding:6px 0;border-bottom:1px solid transparent;transition:border-color .18s ease,opacity .18s ease;
+}
+.nav ul a:hover{border-color:currentColor}
+.utils{display:flex;align-items:center;gap:18px;flex:0 0 auto}
+.utils a{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.06em}
+.utils svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.4}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:6px;color:inherit}
+.burger svg{width:20px;height:20px;stroke:currentColor;stroke-width:1.4}
+
+@media(max-width:1000px){
+  .nav ul{display:none}
+  .burger{display:block;order:-1;margin-left:-6px}
+  .mark{flex:1}
+}
+#menu{
+  display:none;position:fixed;inset:0 0 0 0;z-index:59;background:#fff;padding:110px var(--gutter) 40px;
+}
+#menu.open{display:block}
+#menu a{display:block;font-family:var(--display);font-weight:500;font-size:22px;color:var(--ink);
+  padding:16px 0;border-bottom:1px solid var(--hair)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(94svh,860px);display:flex;align-items:flex-end;background:#1a1c1d}
+.hero .bg{position:absolute;inset:0;overflow:hidden}
+.hero .bg img{filter:brightness(.82) saturate(.85)}
+.hero .bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.06) 34%,rgba(0,0,0,.62) 100%);
+}
+.hero .wrap{position:relative;z-index:2;padding-bottom:clamp(46px,7vh,84px);width:100%}
+.hero h1{
+  color:#fff;font-weight:500;
+  font-size:clamp(38px,6.2vw,86px);line-height:1.02;letter-spacing:-.028em;max-width:16ch;
+}
+.hero p{
+  color:rgba(255,255,255,.92);margin-top:16px;max-width:44ch;font-size:clamp(15px,1.3vw,17px);
+}
+.hero .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(22px,3vh,32px)}
+
+/* ---------- full-bleed feature ---------- */
+.feature{position:relative;min-height:min(78svh,760px);display:flex;align-items:flex-end;background:#1a1c1d}
+.feature .bg{position:absolute;inset:0;overflow:hidden}
+.feature .bg img{filter:brightness(.8) saturate(.8)}
+.feature .bg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.1) 30%,rgba(0,0,0,.66) 100%)}
+.feature .wrap{position:relative;z-index:2;padding-bottom:clamp(44px,6vh,76px);width:100%}
+.feature h2{color:#fff;font-size:clamp(28px,4.2vw,58px);max-width:18ch;letter-spacing:-.026em}
+.feature p{color:rgba(255,255,255,.9);margin-top:14px;max-width:46ch}
+.feature .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* ---------- section scaffolding ---------- */
+.sec{padding:var(--pad) 0}
+.sec-fog{background:var(--fog)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:clamp(26px,3.4vw,44px)}
+.sec-head h2{font-size:clamp(26px,3.4vw,44px)}
+.sec-head p{max-width:52ch;margin-top:12px;color:var(--mid)}
+
+/* ---------- product grid ---------- */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap) clamp(14px,2vw,28px)}
+@media(max-width:900px){.grid3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grid3{grid-template-columns:1fr}}
+
+.prod{display:flex;flex-direction:column}
+.prod .shot{
+  position:relative;aspect-ratio:4/5;background:var(--fog);
+  display:flex;align-items:center;justify-content:center;padding:clamp(20px,3vw,42px);
+  overflow:hidden;
+}
+.sec-fog .prod .shot{background:#fff}
+.prod .sock{width:100%;height:100%;transition:transform .55s cubic-bezier(.2,.7,.3,1)}
+.prod:hover .sock{transform:scale(1.035)}
+.swatch{
+  position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:9px;
+  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);
+}
+.swatch i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.16);display:block}
+.prod .info{padding:16px 2px 0}
+.prod h3{font-size:19px;font-weight:500;letter-spacing:-.012em}
+.prod .sub{color:var(--mid);font-size:13px;margin-top:3px}
+.prod .desc{margin-top:10px;font-size:14px;color:var(--body-ink);max-width:38ch}
+.prod .price{margin-top:12px;font-family:var(--display);font-weight:500;font-size:15px;color:var(--ink)}
+.sizes{display:flex;gap:6px;margin-top:14px}
+.sizes button{
+  flex:1;font-family:var(--display);font-size:13px;background:transparent;
+  border:1px solid var(--hair);color:var(--mid);padding:8px 0;border-radius:2px;cursor:pointer;
+  transition:border-color .18s,color .18s,background .18s;
+}
+.sizes button:hover{border-color:var(--ink);color:var(--ink)}
+.sizes button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.prod .add{width:100%;margin-top:10px}
+
+/* ---------- finder table ---------- */
+.finder{margin-top:clamp(46px,6vw,80px);border-top:1px solid var(--hair)}
+.finder h3{font-size:clamp(20px,2.2vw,26px);margin:26px 0 4px}
+.finder .lede{color:var(--mid);max-width:56ch;margin-bottom:18px}
+.frow{
+  display:grid;grid-template-columns:1.1fr 1.4fr auto;gap:14px 28px;align-items:baseline;
+  padding:18px 0;border-bottom:1px solid var(--hair);
+}
+.frow b{font-family:var(--display);font-weight:500;font-size:16px;color:var(--ink)}
+.frow span{color:var(--mid);font-size:14px}
+.frow em{font-style:normal;font-family:var(--display);font-weight:500;font-size:14px;color:var(--ink);white-space:nowrap}
+@media(max-width:760px){
+  .frow{grid-template-columns:1fr;gap:5px}
+  .frow em{margin-top:4px}
+}
+
+/* ---------- editorial tiles ---------- */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px)}
+@media(max-width:860px){.tiles{grid-template-columns:1fr;gap:36px}}
+.tile figure{aspect-ratio:3/4;overflow:hidden;background:var(--fog)}
+.tile img{transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.tile:hover img{transform:scale(1.04)}
+.tile h3{margin-top:18px;font-size:clamp(19px,1.9vw,23px)}
+.tile p{margin-top:8px;color:var(--mid);max-width:36ch}
+.tile .tlink{margin-top:14px}
+
+/* ---------- build / blueprint ---------- */
+.build-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,4.5vw,72px);align-items:start}
+@media(max-width:900px){.build-grid{grid-template-columns:1fr}}
+.bp-panel{background:#fff;border:1px solid var(--hair);padding:clamp(20px,3vw,38px)}
+.sec-fog .bp-panel{background:#fff}
+.bp{width:100%;height:auto;display:block}
+.bp-line{fill:none;stroke:#0B0B0B;stroke-width:1.4}
+.bp-zone{fill:none;stroke:#9A9D9E;stroke-width:1;stroke-dasharray:3 3}
+.bp-det{fill:none;stroke:rgba(0,0,0,.2);stroke-width:.8}
+.bp-mesh{fill:rgba(0,0,0,.24)}
+.bp-brand{fill:#0B0B0B;font-family:'Inter Tight',sans-serif;font-size:9px;letter-spacing:1.6px}
+.bp-lead{stroke:rgba(0,0,0,.32);stroke-width:.8}
+.bp-dot{fill:#0B0B0B}
+.bp-n{fill:#fff;font-family:'Inter Tight',sans-serif;font-size:9px;font-weight:500}
+
+.specs{list-style:none;border-top:1px solid var(--hair)}
+.specs li{display:grid;grid-template-columns:26px 1fr;gap:14px;padding:17px 0;border-bottom:1px solid var(--hair)}
+.specs b{font-family:var(--display);font-weight:500;font-size:13px;color:var(--mid)}
+.specs strong{display:block;font-family:var(--display);font-weight:500;font-size:16.5px;color:var(--ink);margin-bottom:3px;letter-spacing:-.01em}
+.specs span{font-size:14px;color:var(--mid)}
+.blend{margin-top:22px;display:grid;gap:9px}
+.blend div{display:flex;justify-content:space-between;gap:20px;font-size:13.5px;color:var(--mid);
+  padding-bottom:9px;border-bottom:1px solid var(--hair)}
+.blend div b{font-family:var(--display);font-weight:500;color:var(--ink);white-space:nowrap}
+
+/* ---------- dark story ---------- */
+.story{position:relative;background:var(--night);color:#EDEFEE;overflow:hidden}
+.story .bg{position:absolute;inset:0}
+.story .bg img{filter:brightness(.42) saturate(.7)}
+.story .bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,11,12,.9) 0%,rgba(10,11,12,.58) 62%,rgba(10,11,12,.35) 100%)}
+.story .wrap{position:relative;z-index:2;padding-top:var(--pad);padding-bottom:var(--pad)}
+.story .eyebrow{color:rgba(255,255,255,.62)}
+.story h2{color:#fff;font-size:clamp(28px,4.2vw,54px);margin-top:14px;max-width:16ch}
+.story .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);margin-top:clamp(24px,3vw,40px);max-width:1120px}
+@media(max-width:860px){.story .cols{grid-template-columns:1fr}}
+.story p{color:rgba(255,255,255,.82);margin-bottom:14px;max-width:50ch}
+.story blockquote{border-left:1px solid rgba(255,255,255,.35);padding-left:20px}
+.story blockquote p{color:#fff}
+.story cite{display:block;margin-top:12px;font-style:normal;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.55)}
+.places{display:flex;flex-wrap:wrap;gap:8px 0;margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22)}
+.places span{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;color:rgba(255,255,255,.8);white-space:nowrap}
+.places span+span::before{content:'/';color:rgba(255,255,255,.35);margin:0 12px}
+
+/* ---------- reviews ---------- */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,48px)}
+@media(max-width:860px){.reviews{grid-template-columns:1fr}}
+.review{border-top:1px solid var(--hair);padding-top:18px}
+.review p{font-size:15px;color:var(--body-ink)}
+.review cite{display:block;margin-top:14px;font-style:normal;font-size:12px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--mid)}
+
+/* ---------- newsletter ---------- */
+.signup-band{background:var(--fog);padding:clamp(44px,6vw,76px) 0}
+.signup-band h2{font-size:clamp(22px,2.6vw,32px)}
+.signup-band p{color:var(--mid);margin-top:10px;max-width:48ch}
+.signup{display:flex;gap:8px;max-width:460px;margin-top:20px;flex-wrap:wrap}
+.signup input{
+  flex:1;min-width:200px;background:#fff;border:1px solid var(--hair);border-radius:2px;
+  padding:0 14px;height:46px;font-size:15px;
+}
+.signup input::placeholder{color:#9A9D9E}
+.signup input:focus{outline:none;border-color:var(--ink)}
+.msg{font-size:13px;color:var(--ink);margin-top:10px;min-height:18px}
+
+/* ---------- footer ---------- */
+footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,68px) 0 28px}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+@media(max-width:760px){.fgrid{grid-template-columns:repeat(2,1fr);gap:32px 20px}}
+.fgrid h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+  font-weight:500;margin-bottom:14px}
+.fgrid ul{list-style:none;display:grid;gap:9px}
+.fgrid a{font-size:14px;color:var(--mid);transition:color .16s}
+.fgrid a:hover{color:var(--ink)}
+.legal{margin-top:clamp(32px,4vw,56px);padding-top:18px;border-top:1px solid var(--hair);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mid)}
+.credit{margin-top:14px;font-size:11.5px;color:#9A9D9E;line-height:1.7;max-width:96ch}
+
+/* ---------- sock artwork ---------- */
+.s-body{fill:var(--sc)}.s-dark{fill:var(--scd)}.s-mid{fill:var(--scm)}.s-cuff{fill:var(--scc)}
+.s-band{fill:var(--scd);opacity:.85}.s-mesh{fill:rgba(0,0,0,.34)}
+.s-rib{stroke:rgba(255,255,255,.2);stroke-width:1;fill:none}
+.s-terry{stroke:rgba(0,0,0,.3);stroke-width:6;stroke-dasharray:2 5;fill:none;stroke-linecap:round}
+.s-line{stroke:rgba(255,255,255,.26);stroke-width:1;fill:none}
+.s-txt{fill:#F5F7F6;font-family:'Inter Tight',sans-serif;font-size:9px;letter-spacing:1.6px}
+</style>
+</head>
+<body id="top">
+
+<div class="promo">Free shipping over $35 <span>&nbsp;·&nbsp;</span> Ships from Cle Elum, Washington</div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h18M3 12h18M3 17h18" stroke-linecap="round"/></svg>
+    </button>
+    <a href="#top" class="mark">Teanaway</a>
+    <ul>
+      <li><a href="#line">The line</a></li>
+      <li><a href="#build">The build</a></li>
+      <li><a href="#ground">The ground</a></li>
+      <li><a href="#finder">Sizing</a></li>
+    </ul>
+    <div class="utils">
+      <a href="#line" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21" stroke-linecap="round"/></svg>
+      </a>
+      <a href="#line">Bag (0)</a>
+    </div>
+  </div>
+</header>
+
+<nav id="menu" aria-label="Mobile">
+  <a href="#line">The line</a>
+  <a href="#build">The build</a>
+  <a href="#ground">The ground</a>
+  <a href="#finder">Sizing</a>
+  <a href="#signup">Newsletter</a>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="bg">
+      <img src="https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=2400&q=75"
+           referrerpolicy="no-referrer" alt="A hiker on a high ridge above a river valley in the North Cascades">
+    </div>
+    <div class="wrap">
+      <h1>Built for broken ground</h1>
+      <p>Coolmax and merino socks made in three weights, tested on the talus, snowmelt and deadfall of the Teanaway.</p>
+      <div class="row">
+        <a class="btn btn-light" href="#line">Shop the line</a>
+        <a class="btn btn-ghost" href="#build">See the build</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE -->
+  <section class="feature">
+    <div class="bg">
+      <img loading="lazy" referrerpolicy="no-referrer"
+           src="https://images.unsplash.com/photo-1584148721201-b6432e0d5106?auto=format&fit=crop&w=2400&q=75"
+           alt="Dry east-slope ridgelines under high cloud">
+    </div>
+    <div class="wrap">
+      <h2>Nothing ends a day faster than your feet</h2>
+      <p>Three weights, one mountain range. Every pair is proven on the ground it's named for, by people who are actually out there.</p>
+      <div class="row">
+        <a class="btn btn-light" href="#line">Shop all socks</a>
+        <a class="btn btn-ghost" href="#ground">Read the story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE LINE -->
+  <section class="sec" id="line">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">The line</span>
+          <h2 style="margin-top:12px">Three socks, three weights</h2>
+        </div>
+        <p class="meta">100 lightweight &nbsp;·&nbsp; 200 midweight &nbsp;·&nbsp; 300 heavyweight</p>
+      </div>
+
+      <div class="grid3">
+
+        <article class="prod">
+          <div class="shot" style="--sc:#4B6355;--scd:#37483D;--scc:#3F5449;--scm:#5A7566">
+            <svg class="sock" viewBox="0 0 300 340" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Esmeralda 100 quarter sock in Serpentine">
+              <ellipse cx="140" cy="302" rx="104" ry="7" fill="rgba(0,0,0,.07)"/>
+              <path class="s-body" d="M170,112 L248,112 C252,142 254,172 252,200 C256,230 262,250 250,268 C238,284 214,290 188,290 L98,290 C68,290 46,284 36,272 C28,262 30,248 44,240 C66,230 110,226 142,224 C158,223 168,219 170,206 Z"/>
+              <path class="s-dark" d="M252,202 C256,230 262,250 250,268 C240,282 220,289 196,290 C193,258 208,224 240,208 C245,205 249,203 252,202 Z"/><path class="s-dark" d="M44,240 C58,233 70,230 82,228 L85,290 L98,290 C68,290 47,284 36,272 C28,262 30,248 44,240 Z"/>
+              <path class="s-mid" d="M235,150 L250,150 C253,172 254,190 252,206 L237,206 C235,188 235,170 235,150 Z"/><path class="s-mid" d="M88,228 C104,226 118,225 133,224 L136,250 C120,251 104,252 90,254 Z"/>
+              <circle cx="92" cy="232" r="1.15" class="s-mesh"/><circle cx="98" cy="232" r="1.15" class="s-mesh"/><circle cx="104" cy="232" r="1.15" class="s-mesh"/><circle cx="110" cy="232" r="1.15" class="s-mesh"/><circle cx="116" cy="232" r="1.15" class="s-mesh"/><circle cx="122" cy="232" r="1.15" class="s-mesh"/><circle cx="128" cy="232" r="1.15" class="s-mesh"/><circle cx="95" cy="238" r="1.15" class="s-mesh"/><circle cx="101" cy="238" r="1.15" class="s-mesh"/><circle cx="107" cy="238" r="1.15" class="s-mesh"/><circle cx="113" cy="238" r="1.15" class="s-mesh"/><circle cx="119" cy="238" r="1.15" class="s-mesh"/><circle cx="125" cy="238" r="1.15" class="s-mesh"/><circle cx="131" cy="238" r="1.15" class="s-mesh"/><circle cx="92" cy="244" r="1.15" class="s-mesh"/><circle cx="98" cy="244" r="1.15" class="s-mesh"/><circle cx="104" cy="244" r="1.15" class="s-mesh"/><circle cx="110" cy="244" r="1.15" class="s-mesh"/><circle cx="116" cy="244" r="1.15" class="s-mesh"/><circle cx="122" cy="244" r="1.15" class="s-mesh"/><circle cx="128" cy="244" r="1.15" class="s-mesh"/><circle cx="95" cy="250" r="1.15" class="s-mesh"/><circle cx="101" cy="250" r="1.15" class="s-mesh"/><circle cx="107" cy="250" r="1.15" class="s-mesh"/><circle cx="113" cy="250" r="1.15" class="s-mesh"/><circle cx="119" cy="250" r="1.15" class="s-mesh"/><circle cx="125" cy="250" r="1.15" class="s-mesh"/><circle cx="131" cy="250" r="1.15" class="s-mesh"/>
+              <path class="s-band" d="M136,224 L162,223 L176,290 L150,290 Z"/><path class="s-line" d="M144,223 L157,290 M152,223 L165,290 M160,223 L172,290"/><path class="s-terry" d="M64,278 L214,281"/><path class="s-terry" d="M70,287 L200,289"/>
+              <path class="s-cuff" d="M170,112 L248,112 C251,124 252,132 252,142 L170,142 Z"/><path class="s-rib" d="M176,146 L176,196 M183,146 L183,196 M190,146 L190,196 M197,146 L197,196 M204,146 L204,196 M211,146 L211,196 M218,146 L218,196 M225,146 L225,196 M232,146 L232,196 M239,146 L239,196 M246,146 L246,196"/>
+              <text class="s-txt" x="209" y="217" text-anchor="middle">TEANAWAY</text>
+            </svg>
+            <span class="swatch"><i style="background:#4B6355"></i>Serpentine</span>
+          </div>
+          <div class="info">
+            <h3>Esmeralda 100</h3>
+            <p class="sub">Quarter · Lightweight · Coolmax</p>
+            <p class="desc">The fastest-drying sock we make. Fast miles, dry rock, long dusty approaches.</p>
+            <p class="price">$10</p>
+            <div class="sizes" role="group" aria-label="Size, Esmeralda 100">
+              <button type="button">S</button><button type="button">M</button><button type="button">L</button><button type="button">XL</button>
+            </div>
+            <button type="button" class="btn btn-dark add">Add to bag</button>
+          </div>
+        </article>
+
+        <article class="prod">
+          <div class="shot" style="--sc:#3E4649;--scd:#2C3336;--scc:#333B3E;--scm:#4C5559">
+            <svg class="sock" viewBox="0 0 300 340" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Navaho Pass 200 crew sock in Basalt">
+              <ellipse cx="140" cy="302" rx="104" ry="7" fill="rgba(0,0,0,.07)"/>
+              <path class="s-body" d="M170,24 L248,24 C252,86 254,148 252,200 C256,230 262,250 250,268 C238,284 214,290 188,290 L98,290 C68,290 46,284 36,272 C28,262 30,248 44,240 C66,230 110,226 142,224 C158,223 168,219 170,206 Z"/>
+              <path class="s-dark" d="M252,202 C256,230 262,250 250,268 C240,282 220,289 196,290 C193,258 208,224 240,208 C245,205 249,203 252,202 Z"/><path class="s-dark" d="M44,240 C58,233 70,230 82,228 L85,290 L98,290 C68,290 47,284 36,272 C28,262 30,248 44,240 Z"/>
+              <path class="s-mid" d="M235,150 L250,150 C253,172 254,190 252,206 L237,206 C235,188 235,170 235,150 Z"/><path class="s-mid" d="M88,228 C104,226 118,225 133,224 L136,250 C120,251 104,252 90,254 Z"/>
+              <circle cx="92" cy="232" r="1.15" class="s-mesh"/><circle cx="98" cy="232" r="1.15" class="s-mesh"/><circle cx="104" cy="232" r="1.15" class="s-mesh"/><circle cx="110" cy="232" r="1.15" class="s-mesh"/><circle cx="116" cy="232" r="1.15" class="s-mesh"/><circle cx="122" cy="232" r="1.15" class="s-mesh"/><circle cx="128" cy="232" r="1.15" class="s-mesh"/><circle cx="95" cy="238" r="1.15" class="s-mesh"/><circle cx="101" cy="238" r="1.15" class="s-mesh"/><circle cx="107" cy="238" r="1.15" class="s-mesh"/><circle cx="113" cy="238" r="1.15" class="s-mesh"/><circle cx="119" cy="238" r="1.15" class="s-mesh"/><circle cx="125" cy="238" r="1.15" class="s-mesh"/><circle cx="131" cy="238" r="1.15" class="s-mesh"/><circle cx="92" cy="244" r="1.15" class="s-mesh"/><circle cx="98" cy="244" r="1.15" class="s-mesh"/><circle cx="104" cy="244" r="1.15" class="s-mesh"/><circle cx="110" cy="244" r="1.15" class="s-mesh"/><circle cx="116" cy="244" r="1.15" class="s-mesh"/><circle cx="122" cy="244" r="1.15" class="s-mesh"/><circle cx="128" cy="244" r="1.15" class="s-mesh"/><circle cx="95" cy="250" r="1.15" class="s-mesh"/><circle cx="101" cy="250" r="1.15" class="s-mesh"/><circle cx="107" cy="250" r="1.15" class="s-mesh"/><circle cx="113" cy="250" r="1.15" class="s-mesh"/><circle cx="119" cy="250" r="1.15" class="s-mesh"/><circle cx="125" cy="250" r="1.15" class="s-mesh"/><circle cx="131" cy="250" r="1.15" class="s-mesh"/>
+              <path class="s-band" d="M136,224 L162,223 L176,290 L150,290 Z"/><path class="s-line" d="M144,223 L157,290 M152,223 L165,290 M160,223 L172,290"/><path class="s-terry" d="M64,278 L214,281"/><path class="s-terry" d="M70,287 L200,289"/>
+              <path class="s-cuff" d="M170,24 L248,24 C251,38 252,46 252,58 L170,58 Z"/><path class="s-rib" d="M176,62 L176,196 M183,62 L183,196 M190,62 L190,196 M197,62 L197,196 M204,62 L204,196 M211,62 L211,196 M218,62 L218,196 M225,62 L225,196 M232,62 L232,196 M239,62 L239,196 M246,62 L246,196"/>
+              <text class="s-txt" x="209" y="217" text-anchor="middle">TEANAWAY</text>
+            </svg>
+            <span class="swatch"><i style="background:#3E4649"></i>Basalt</span>
+          </div>
+          <div class="info">
+            <h3>Navaho Pass 200</h3>
+            <p class="sub">Crew · Midweight · Merino</p>
+            <p class="desc">The one most people wear most of the year. All-day mileage over scree and broken ground.</p>
+            <p class="price">$12</p>
+            <div class="sizes" role="group" aria-label="Size, Navaho Pass 200">
+              <button type="button">S</button><button type="button">M</button><button type="button">L</button><button type="button">XL</button>
+            </div>
+            <button type="button" class="btn btn-dark add">Add to bag</button>
+          </div>
+        </article>
+
+        <article class="prod">
+          <div class="shot" style="--sc:#6E5326;--scd:#523D1B;--scc:#5C451F;--scm:#836430">
+            <svg class="sock" viewBox="0 0 300 340" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Iron Peak 300 crew sock in Larch">
+              <ellipse cx="140" cy="302" rx="104" ry="7" fill="rgba(0,0,0,.07)"/>
+              <path class="s-body" d="M170,24 L248,24 C252,86 254,148 252,200 C256,230 262,250 250,268 C238,284 214,290 188,290 L98,290 C68,290 46,284 36,272 C28,262 30,248 44,240 C66,230 110,226 142,224 C158,223 168,219 170,206 Z"/>
+              <path class="s-dark" d="M252,202 C256,230 262,250 250,268 C240,282 220,289 196,290 C193,258 208,224 240,208 C245,205 249,203 252,202 Z"/><path class="s-dark" d="M44,240 C58,233 70,230 82,228 L85,290 L98,290 C68,290 47,284 36,272 C28,262 30,248 44,240 Z"/>
+              <path class="s-mid" d="M235,150 L250,150 C253,172 254,190 252,206 L237,206 C235,188 235,170 235,150 Z"/><path class="s-mid" d="M88,228 C104,226 118,225 133,224 L136,250 C120,251 104,252 90,254 Z"/>
+              <circle cx="92" cy="232" r="1.15" class="s-mesh"/><circle cx="98" cy="232" r="1.15" class="s-mesh"/><circle cx="104" cy="232" r="1.15" class="s-mesh"/><circle cx="110" cy="232" r="1.15" class="s-mesh"/><circle cx="116" cy="232" r="1.15" class="s-mesh"/><circle cx="122" cy="232" r="1.15" class="s-mesh"/><circle cx="128" cy="232" r="1.15" class="s-mesh"/><circle cx="95" cy="238" r="1.15" class="s-mesh"/><circle cx="101" cy="238" r="1.15" class="s-mesh"/><circle cx="107" cy="238" r="1.15" class="s-mesh"/><circle cx="113" cy="238" r="1.15" class="s-mesh"/><circle cx="119" cy="238" r="1.15" class="s-mesh"/><circle cx="125" cy="238" r="1.15" class="s-mesh"/><circle cx="131" cy="238" r="1.15" class="s-mesh"/><circle cx="92" cy="244" r="1.15" class="s-mesh"/><circle cx="98" cy="244" r="1.15" class="s-mesh"/><circle cx="104" cy="244" r="1.15" class="s-mesh"/><circle cx="110" cy="244" r="1.15" class="s-mesh"/><circle cx="116" cy="244" r="1.15" class="s-mesh"/><circle cx="122" cy="244" r="1.15" class="s-mesh"/><circle cx="128" cy="244" r="1.15" class="s-mesh"/><circle cx="95" cy="250" r="1.15" class="s-mesh"/><circle cx="101" cy="250" r="1.15" class="s-mesh"/><circle cx="107" cy="250" r="1.15" class="s-mesh"/><circle cx="113" cy="250" r="1.15" class="s-mesh"/><circle cx="119" cy="250" r="1.15" class="s-mesh"/><circle cx="125" cy="250" r="1.15" class="s-mesh"/><circle cx="131" cy="250" r="1.15" class="s-mesh"/>
+              <path class="s-band" d="M136,224 L162,223 L176,290 L150,290 Z"/><path class="s-line" d="M144,223 L157,290 M152,223 L165,290 M160,223 L172,290"/><path class="s-terry" d="M64,278 L214,281"/><path class="s-terry" d="M70,287 L200,289"/><path class="s-terry" d="M74,268 L196,271"/>
+              <path class="s-cuff" d="M170,24 L248,24 C251,38 252,46 252,58 L170,58 Z"/><path class="s-rib" d="M176,62 L176,196 M183,62 L183,196 M190,62 L190,196 M197,62 L197,196 M204,62 L204,196 M211,62 L211,196 M218,62 L218,196 M225,62 L225,196 M232,62 L232,196 M239,62 L239,196 M246,62 L246,196"/>
+              <text class="s-txt" x="209" y="217" text-anchor="middle">TEANAWAY</text>
+            </svg>
+            <span class="swatch"><i style="background:#6E5326"></i>Larch</span>
+          </div>
+          <div class="info">
+            <h3>Iron Peak 300</h3>
+            <p class="sub">Crew · Heavyweight · Merino</p>
+            <p class="desc">Cold, wet and long. Late season, overnights, and anything that starts before light.</p>
+            <p class="price">$14</p>
+            <div class="sizes" role="group" aria-label="Size, Iron Peak 300">
+              <button type="button">S</button><button type="button">M</button><button type="button">L</button><button type="button">XL</button>
+            </div>
+            <button type="button" class="btn btn-dark add">Add to bag</button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- FINDER -->
+      <div class="finder" id="finder">
+        <h3>Pick by what you're walking on</h3>
+        <p class="lede">Conditions here change by the hour and by the season. The ground does not.</p>
+        <div class="frow"><b>Serpentine and talus</b><span>Sharp, loose and abrasive. It finds thin yarn and opens it.</span><em>Navaho Pass 200</em></div>
+        <div class="frow"><b>Snowmelt and crossings</b><span>Wet feet from the first melt through midsummer.</span><em>Esmeralda 100</em></div>
+        <div class="frow"><b>Off-trail and deadfall</b><span>High-stepping and sliding. Heel lift beats distance to a blister.</span><em>Iron Peak 300</em></div>
+        <div class="frow"><b>Long dry approaches</b><span>Ten miles before the interesting part. Cushion has to last.</span><em>Navaho Pass 200</em></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TILES -->
+  <section class="sec sec-fog">
+    <div class="wrap">
+      <div class="tiles">
+        <article class="tile">
+          <figure>
+            <img loading="lazy" referrerpolicy="no-referrer"
+                 src="https://images.unsplash.com/photo-1485809052957-5113b0ff51af?auto=format&fit=crop&w=1000&q=75"
+                 alt="Boots, a pack and a map laid out before a trip">
+          </figure>
+          <h3>Five details, one sock</h3>
+          <p>A double-welt top, a four-panel heel and a hand-linked toe you can't find with your toes.</p>
+          <a class="tlink" href="#build">See the construction</a>
+        </article>
+        <article class="tile">
+          <figure>
+            <img loading="lazy" referrerpolicy="no-referrer"
+                 src="https://images.unsplash.com/photo-1600100315760-ac46b65f6fdd?auto=format&fit=crop&w=1000&q=75"
+                 alt="A hiker's boots planted on bare rock">
+          </figure>
+          <h3>Named for the ground</h3>
+          <p>Mount Stuart, Lake Ingalls, Esmeralda Basin. Each sock is tested where it gets its name.</p>
+          <a class="tlink" href="#ground">Read the story</a>
+        </article>
+        <article class="tile">
+          <figure>
+            <img loading="lazy" referrerpolicy="no-referrer"
+                 src="https://images.unsplash.com/photo-1530792271526-7ddf516473b3?auto=format&fit=crop&w=1000&q=75"
+                 alt="A hiker stepping up onto a rock on a mountain trail">
+          </figure>
+          <h3>One percent to the trails</h3>
+          <p>A percent of every pair goes to the crews who cut the deadfall and hold the tread together.</p>
+          <a class="tlink" href="#signup">How it works</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD -->
+  <section class="sec" id="build">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">The build</span>
+          <h2 style="margin-top:12px">Everything is where it does work</h2>
+        </div>
+        <p class="meta">Body pattern &nbsp;·&nbsp; Rev. C</p>
+      </div>
+
+      <div class="build-grid">
+        <div class="bp-panel">
+          <svg class="bp" viewBox="0 0 310 345" preserveAspectRatio="xMidYMid meet" role="img"
+               aria-label="Construction drawing of the Teanaway sock with five numbered callouts">
+            <path class="bp-line" d="M170,24 L248,24 C252,86 254,148 252,200 C256,230 262,250 250,268 C238,284 214,290 188,290 L98,290 C68,290 46,284 36,272 C28,262 30,248 44,240 C66,230 110,226 142,224 C158,223 168,219 170,206 Z"/>
+            <path class="bp-zone" d="M170,24 L248,24 C251,38 252,46 252,58 L170,58 Z"/><path class="bp-zone" d="M252,202 C256,230 262,250 250,268 C240,282 220,289 196,290 C193,258 208,224 240,208 C245,205 249,203 252,202 Z"/>
+            <path class="bp-zone" d="M44,240 C58,233 70,230 82,228 L85,290 L98,290 C68,290 47,284 36,272 C28,262 30,248 44,240 Z"/><path class="bp-zone" d="M136,224 L162,223 L176,290 L150,290 Z"/>
+            <path class="bp-zone" d="M88,228 C104,226 118,225 133,224 L136,250 C120,251 104,252 90,254 Z"/><path class="bp-zone" d="M235,150 L250,150 C253,172 254,190 252,206 L237,206 C235,188 235,170 235,150 Z"/>
+            <path class="bp-det" d="M176,62 L176,196 M183,62 L183,196 M190,62 L190,196 M197,62 L197,196 M204,62 L204,196 M211,62 L211,196 M218,62 L218,196 M225,62 L225,196 M232,62 L232,196 M239,62 L239,196 M246,62 L246,196"/>
+            <circle cx="92" cy="232" r="1.15" class="bp-mesh"/><circle cx="98" cy="232" r="1.15" class="bp-mesh"/><circle cx="104" cy="232" r="1.15" class="bp-mesh"/><circle cx="110" cy="232" r="1.15" class="bp-mesh"/><circle cx="116" cy="232" r="1.15" class="bp-mesh"/><circle cx="122" cy="232" r="1.15" class="bp-mesh"/><circle cx="128" cy="232" r="1.15" class="bp-mesh"/><circle cx="95" cy="238" r="1.15" class="bp-mesh"/><circle cx="101" cy="238" r="1.15" class="bp-mesh"/><circle cx="107" cy="238" r="1.15" class="bp-mesh"/><circle cx="113" cy="238" r="1.15" class="bp-mesh"/><circle cx="119" cy="238" r="1.15" class="bp-mesh"/><circle cx="125" cy="238" r="1.15" class="bp-mesh"/><circle cx="131" cy="238" r="1.15" class="bp-mesh"/><circle cx="92" cy="244" r="1.15" class="bp-mesh"/><circle cx="98" cy="244" r="1.15" class="bp-mesh"/><circle cx="104" cy="244" r="1.15" class="bp-mesh"/><circle cx="110" cy="244" r="1.15" class="bp-mesh"/><circle cx="116" cy="244" r="1.15" class="bp-mesh"/><circle cx="122" cy="244" r="1.15" class="bp-mesh"/><circle cx="128" cy="244" r="1.15" class="bp-mesh"/><circle cx="95" cy="250" r="1.15" class="bp-mesh"/><circle cx="101" cy="250" r="1.15" class="bp-mesh"/><circle cx="107" cy="250" r="1.15" class="bp-mesh"/><circle cx="113" cy="250" r="1.15" class="bp-mesh"/><circle cx="119" cy="250" r="1.15" class="bp-mesh"/><circle cx="125" cy="250" r="1.15" class="bp-mesh"/><circle cx="131" cy="250" r="1.15" class="bp-mesh"/>
+            <path class="bp-det" d="M144,223 L157,290 M152,223 L165,290 M160,223 L172,290"/>
+            <path class="bp-det" d="M64,278 L214,281" stroke-dasharray="2 5" stroke-width="4"/>
+            <path class="bp-det" d="M70,287 L200,289" stroke-dasharray="2 5" stroke-width="4"/>
+            <text class="bp-brand" x="209" y="217" text-anchor="middle">TEANAWAY</text>
+            <line class="bp-lead" x1="232" y1="40" x2="286" y2="28"/><circle class="bp-dot" cx="286" cy="28" r="9"/><text class="bp-n" x="286" y="31" text-anchor="middle">01</text>
+            <line class="bp-lead" x1="232" y1="258" x2="286" y2="272"/><circle class="bp-dot" cx="286" cy="272" r="9"/><text class="bp-n" x="286" y="275" text-anchor="middle">02</text>
+            <line class="bp-lead" x1="112" y1="240" x2="44" y2="196"/><circle class="bp-dot" cx="44" cy="196" r="9"/><text class="bp-n" x="44" y="199" text-anchor="middle">03</text>
+            <line class="bp-lead" x1="158" y1="258" x2="96" y2="322"/><circle class="bp-dot" cx="96" cy="322" r="9"/><text class="bp-n" x="96" y="325" text-anchor="middle">04</text>
+            <line class="bp-lead" x1="58" y1="258" x2="20" y2="246"/><circle class="bp-dot" cx="20" cy="246" r="9"/><text class="bp-n" x="20" y="249" text-anchor="middle">05</text>
+          </svg>
+        </div>
+
+        <div>
+          <ol class="specs">
+            <li><b>01</b><span><strong>Double-welt top</strong>Holds all day without leaving a mark on the calf.</span></li>
+            <li><b>02</b><span><strong>Four-panel Y-gore heel</strong>Seats the heel cup so the sock cannot rotate in the boot.</span></li>
+            <li><b>03</b><span><strong>Open-mesh instep</strong>The fastest-drying panel, on the one part of the foot that takes no load.</span></li>
+            <li><b>04</b><span><strong>Two-stage compression arch</strong>Firmer under the arch than over it. Locks the footbed without cutting circulation.</span></li>
+            <li><b>05</b><span><strong>Hand-linked toe</strong>Flat enough that you cannot find it with your toes.</span></li>
+          </ol>
+          <div class="blend">
+            <div><span>Coolmax</span><b>58% polyester / 39% nylon / 3% elastane</b></div>
+            <div><span>Merino</span><b>62% wool 17.5μ / 35% nylon / 3% elastane</b></div>
+            <div><span>Gauge</span><b>200 needle</b></div>
+            <div><span>Care</span><b>Machine wash cold, tumble low</b></div>
+          </div>
+          <p style="margin-top:24px;color:var(--mid);max-width:46ch">Built like a $30 sock and priced at $12. The difference is the markup, not the sock.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story dark" id="ground">
+    <div class="bg">
+      <img loading="lazy" referrerpolicy="no-referrer"
+           src="https://images.unsplash.com/photo-1646680827787-ab9b44a0fdde?auto=format&fit=crop&w=2200&q=72"
+           alt="An alpine lake held in a bowl of rock and timber beneath a granite peak">
+    </div>
+    <div class="wrap">
+      <span class="eyebrow">Teanaway presents</span>
+      <h2>The east slope</h2>
+      <div class="cols">
+        <div>
+          <p>Mount Stuart closes the north end at 9,415 feet, the second-highest non-volcanic peak in Washington, and a mile of bare granite that fills the sky the moment you crest Longs Pass.</p>
+          <p>Beneath it, Lake Ingalls sits in a bowl of rust-orange peridotite, ringed by larch that turn gold for two weeks every October. Esmeralda Basin runs to wildflower meadow, then gives out into scree and open ridgeline that holds no water and grows almost nothing.</p>
+          <p>The beauty and the difficulty are the same fact.</p>
+        </div>
+        <div>
+          <blockquote>
+            <p>I grew up on this side of the crest and I have wrecked a lot of feet up here. The sock that finally worked cost me thirty-two dollars, and when I cut it apart there was nothing inside worth thirty-two dollars. So we built it properly, in the same gauge, and priced it honestly.</p>
+            <cite>[Founder name] · Founder · Cle Elum, WA</cite>
+          </blockquote>
+        </div>
+      </div>
+      <p class="places">
+        <span>Mount Stuart</span><span>Lake Ingalls</span><span>Esmeralda Basin</span><span>Longs Pass</span><span>Ingalls Peak</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Field notes</span>
+          <h2 style="margin-top:12px">From people who are out there</h2>
+        </div>
+      </div>
+      <div class="reviews">
+        <blockquote class="review">
+          <p>Fourteen miles on Ingalls Creek, off-trail for most of it. No hot spots, no bunching, no adjusting. I forgot I was wearing them, which is the whole point.</p>
+          <cite>M. R. · Cle Elum, WA · Navaho Pass 200</cite>
+        </blockquote>
+        <blockquote class="review">
+          <p>Bought three pairs fully expecting to be disappointed at this price. They are better than the $28 pair I just retired.</p>
+          <cite>J. T. · Bellingham, WA · Esmeralda 100</cite>
+        </blockquote>
+        <blockquote class="review">
+          <p>Second season on the same pair, hunted and hiked hard in them. Toe seam is still flat and the arch band has not given up.</p>
+          <cite>D. K. · Ellensburg, WA · Iron Peak 300</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section class="signup-band" id="signup">
+    <div class="wrap">
+      <h2>Hear about the next drop</h2>
+      <p>Restocks, new weights, and what's melting out. A few emails a year, not a few a week.</p>
+      <div class="signup">
+        <input id="email" type="email" placeholder="you@email.com" aria-label="Email address">
+        <button type="button" class="btn btn-dark" id="join">Sign me up</button>
+      </div>
+      <p class="msg" id="msg" role="status"></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#line">All socks</a></li>
+          <li><a href="#line">Esmeralda 100</a></li>
+          <li><a href="#line">Navaho Pass 200</a></li>
+          <li><a href="#line">Iron Peak 300</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#finder">Sizing</a></li>
+          <li><a href="#build">Materials and care</a></li>
+          <li><a href="#signup">Shipping and returns</a></li>
+          <li><a href="#signup">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul>
+          <li><a href="#ground">The Teanaway</a></li>
+          <li><a href="#build">How they're made</a></li>
+          <li><a href="#signup">Trail fund</a></li>
+          <li><a href="#signup">Stockists</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#top">Instagram</a></li>
+          <li><a href="#top">YouTube</a></li>
+          <li><a href="#signup">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Teanaway Sock Co. · Cle Elum, Washington</span>
+      <span>Privacy · Terms · Accessibility</span>
+    </div>
+    <p class="credit">Placeholder photography via Unsplash, free for commercial use. Swap for real Teanaway and product shots before launch. Reviews and the founder note are placeholder copy — replace with real customer quotes and your own words before publishing.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hdr = document.getElementById('hdr');
+  var menu = document.getElementById('menu');
+  var burger = document.getElementById('burger');
+
+  document.querySelectorAll('img').forEach(function(im){
+    im.addEventListener('error', function(){ im.style.opacity = '0'; });
+  });
+
+  function onScroll(){ hdr.classList.toggle('solid', window.scrollY > 30); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+    if(open){ hdr.classList.add('solid'); } else { onScroll(); }
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      menu.classList.remove('open');
+      burger.setAttribute('aria-expanded','false');
+      document.body.style.overflow = '';
+      setTimeout(onScroll, 60);
+    }
+  });
+
+  document.querySelectorAll('.sizes').forEach(function(group){
+    group.addEventListener('click', function(e){
+      if(e.target.tagName !== 'BUTTON') return;
+      group.querySelectorAll('button').forEach(function(b){ b.classList.remove('on'); });
+      e.target.classList.add('on');
+    });
+  });
+
+  document.querySelectorAll('.add').forEach(function(b){
+    b.addEventListener('click', function(){
+      var label = b.textContent;
+      b.textContent = 'Added to bag';
+      setTimeout(function(){ b.textContent = label; }, 1400);
+    });
+  });
+
+  document.getElementById('join').addEventListener('click', function(){
+    var v = document.getElementById('email').value.trim();
+    document.getElementById('msg').textContent =
+      /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) ? "You're on the list." : 'Enter an email address to sign up.';
+  });
+})();
+</script>
+</body>
+</html>
