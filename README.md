@@ -83,23 +83,31 @@ stuart-200-side.jpg        larch-100-white-side.jpg   larch-100-black-side.jpg
 stuart-200-back.jpg        larch-100-white-back.jpg   larch-100-black-back.jpg
 ```
 
-The first four are cut from supplied product photography and are native
-resolution — 661 x 784 up to 581 x 877. **The two black shots are still cropped
-from the tech-pack sheet** and are the only low-resolution images left on the
-site, so quality drops visibly when someone switches the Larch 100 to Black.
+The side views are cut from supplied product photography. **The two black shots
+are still cropped from the tech-pack sheet** and are the only low-resolution
+images left on the site, so quality drops when someone switches the Larch 100 to
+Black.
 
-The back view is the second shot on purpose: it is where the mark sits, over the
-heel. Stray sheet content — annotations, view labels, body copy that fell inside
+The back view is the second shot on purpose, and it is framed on the cuff rather
+than on the whole sock: shot full-length, the graphite heel is the dominant mass
+and the three larch dashes shrink to a detail — the full back view filled 32% of
+the frame and the mark was barely legible. Cropping to the cuff with the top of
+the heel kept for context takes that to 51% and makes the dashes the subject.
+Stray sheet content — annotations, view labels, body copy that fell inside
 a crop — was removed by keeping only the sock's
 connected pixel region, and each background was lifted to pure white so the
 images sit on the page background under `mix-blend-mode: multiply` with no
 visible box. Change `--fog` and the frames follow; the photos need no re-export.
 
-The photographed four are saved at native size, JPEG q92, no chroma
-subsampling. The two black shots, having no better source, are resampled 3x
-(Lanczos, a median pass to kill the ringing that introduces, then unsharp) at
-q95. Every image renders at roughly 1x on a 3x phone. 496 KB for all six; the
-black pair only loads if someone picks that colorway.
+Side views are saved at native size; the cuff-framed back views are resampled to
+1010 px tall, which is what the largest render needs at 2x. JPEG q92, no chroma
+subsampling throughout. Every image renders at 0.88–1.09x of its own pixels, so
+nothing is being stretched. 632 KB for all six; the black pair only loads if
+someone picks that colorway.
+
+The black back view uses a tighter isolation threshold and skips the median pass
+the other tech-pack crops use — at the cuff crop's magnification that pass left
+a visible white halo around the sock.
 
 Each product has a two-up thumbnail strip that swaps the main image. The Larch
 100's colorway buttons swap the whole strip (`.thumbs[data-way]`) and reset it
