@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teanaway Sock Co. — 200 Quarter &amp; Performance Crew | Ellensburg, WA</title>
-<meta name="description" content="Two socks for the east slope. The 200 Quarter, a midweight merino cushion sock, and the Performance Crew, an ultralight mesh-knit crew built to move fast.">
+<title>Teanaway Sock Co. — Stuart 200 &amp; Larch 100 | Ellensburg, WA</title>
+<meta name="description" content="Two socks for the east slope. The Stuart 200, a midweight cushion quarter, and the Larch 100, an ultralight mesh-knit crew. Both built to move fast.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -176,7 +176,7 @@ header.solid .nav{color:var(--ink)}
   mix-blend-mode:multiply;transition:transform .55s cubic-bezier(.2,.7,.3,1);
 }
 .pfeat:hover .pshot img{transform:scale(1.03)}
-.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:440px}
+.thumbs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:216px}
 .thumbs[hidden]{display:none}
 .thumbs button{
   aspect-ratio:1/1;background:var(--fog);border:1px solid transparent;padding:10px;cursor:pointer;
@@ -185,21 +185,12 @@ header.solid .nav{color:var(--ink)}
 .thumbs button:hover{border-color:var(--hair)}
 .thumbs button.on{border-color:var(--ink)}
 .thumbs img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply}
-.rank{
-  position:absolute;top:14px;left:14px;font-family:var(--display);font-weight:500;
-  font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);
-}
-.swatch{
-  position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:9px;
-  font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);
-}
-.swatch .duo{display:flex}
-.swatch i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.16);display:block}
-.swatch .duo i+i{margin-left:-5px}
-
-.pinfo h3{font-size:clamp(26px,3.1vw,42px);letter-spacing:-.024em;margin-top:10px}
+.pinfo h3{font-size:clamp(26px,3.1vw,42px);letter-spacing:-.024em}
 .pinfo .sub{color:var(--mid);font-size:13.5px;margin-top:8px;letter-spacing:.02em}
 .pinfo .lede{margin-top:18px;font-size:15.5px;max-width:46ch;color:var(--body-ink)}
+.sig{margin-top:18px;padding-left:15px;border-left:2px solid var(--larch);
+  font-size:14.5px;color:var(--mid);max-width:44ch}
+.sig b{font-family:var(--display);font-weight:500;color:var(--ink)}
 .chips{list-style:none;margin-top:24px;border-top:1px solid var(--hair)}
 .chips li{display:flex;justify-content:space-between;gap:20px;padding:11px 0;
   border-bottom:1px solid var(--hair);font-size:13.5px;color:var(--mid)}
@@ -393,7 +384,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
     </div>
     <div class="wrap">
       <h1>Built for broken ground</h1>
-      <p>Two socks for the east slope. A midweight merino quarter for the long days, an ultralight crew for the fast ones. Both proven on talus, snowmelt and deadfall.</p>
+      <p>Two socks for the east slope. A midweight cushion quarter for the long days, an ultralight crew for the fast ones. Both proven on talus, snowmelt and deadfall.</p>
       <div class="row">
         <a class="btn btn-light" href="#line">Shop the line</a>
         <a class="btn btn-ghost" href="#build">See the build</a>
@@ -426,7 +417,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
           <span class="eyebrow">The line</span>
           <h2 style="margin-top:12px">Two socks. Two jobs.</h2>
         </div>
-        <p class="meta">200 Quarter · midweight merino &nbsp;·&nbsp; Performance Crew · ultralight</p>
+        <p class="meta">Stuart 200 · midweight cushion, quarter &nbsp;·&nbsp; Larch 100 · ultralight, crew</p>
       </div>
 
       <div class="lineup">
@@ -435,35 +426,24 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         <article class="pfeat">
           <div class="pmedia">
             <div class="pshot">
-              <span class="rank">01 &nbsp;/&nbsp; Flagship</span>
-              <img id="img-200" src="img/200-quarter-stuart-stone.jpg" width="295" height="455"
-                   alt="200 Quarter in Stuart Stone, outside view">
-              <span class="swatch">
-                <span class="duo"><i style="background:#A9A6A0"></i><i style="background:#4A4E4F"></i><i style="background:#9E4A28"></i></span>
-                Stuart Stone
-              </span>
+              <img id="img-200" src="img/stuart-200-side.jpg" width="590" height="910"
+                   alt="Stuart 200 in Stuart Stone, outside view">
             </div>
-            <div class="thumbs" data-main="img-200" role="group" aria-label="200 Quarter views">
+            <div class="thumbs" data-main="img-200" role="group" aria-label="Stuart 200 views">
               <button type="button" class="on" aria-pressed="true"
-                      data-src="img/200-quarter-stuart-stone.jpg" data-alt="200 Quarter in Stuart Stone, outside view">
-                <img src="img/200-quarter-stuart-stone.jpg" alt="Outside view" loading="lazy" width="120" height="120"></button>
+                      data-src="img/stuart-200-side.jpg" data-alt="Stuart 200 in Stuart Stone, outside view">
+                <img src="img/stuart-200-side.jpg" alt="Outside view" loading="lazy"></button>
               <button type="button" aria-pressed="false"
-                      data-src="img/200-quarter-inside.jpg" data-alt="200 Quarter, inside view showing the arch compression">
-                <img src="img/200-quarter-inside.jpg" alt="Inside view" loading="lazy" width="120" height="120"></button>
-              <button type="button" aria-pressed="false"
-                      data-src="img/200-quarter-back.jpg" data-alt="200 Quarter, back view showing the Achilles guard and the larch mountain mark">
-                <img src="img/200-quarter-back.jpg" alt="Back view" loading="lazy" width="120" height="120"></button>
-              <button type="button" aria-pressed="false"
-                      data-src="img/200-quarter-sole.jpg" data-alt="200 Quarter, sole view showing the full terry cushion and reinforced heel and toe">
-                <img src="img/200-quarter-sole.jpg" alt="Sole view" loading="lazy" width="120" height="120"></button>
+                      data-src="img/stuart-200-back.jpg" data-alt="Stuart 200 from behind, showing the Achilles guard and the Mount Stuart mark on the back cuff">
+                <img src="img/stuart-200-back.jpg" alt="Back view" loading="lazy"></button>
             </div>
           </div>
           <div class="pinfo">
-            <span class="eyebrow">Colorway 001 <b>Stuart Stone</b></span>
-            <h3>200 Quarter</h3>
+            <h3>Stuart 200</h3>
             <p class="sub">Quarter · Midweight cushion · Merino blend</p>
             <div class="lrule"></div>
             <p class="lede">Built for long miles. Made to move fast. Light, breathable, resilient cushioning that won't quit at mile 100 — full terry underfoot, an Achilles guard where the boot rubs, and a toe seam you can't find with your toes.</p>
+            <p class="sig"><b>The Mount Stuart mark.</b> Stitched in larch on the back cuff, above the Achilles guard — for the peak that closes the north end of the range.</p>
             <ul class="chips">
               <li><span>Height</span><b>Quarter · 5.5" heel to cuff</b></li>
               <li><span>Yarn</span><b>58–60% merino / 37–39% nylon / 3% elastane</b></li>
@@ -472,10 +452,10 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
             </ul>
             <p class="ways"><span class="chip">
               <span class="duo"><i style="background:#A9A6A0"></i><i style="background:#4A4E4F"></i><i style="background:#9E4A28"></i></span>
-              One colorway · Stuart Stone
+              Stuart Stone
             </span></p>
             <p class="price">$22 <small>per pair</small></p>
-            <div class="sizes" role="group" aria-label="Size, 200 Quarter">
+            <div class="sizes" role="group" aria-label="Size, Stuart 200">
               <button type="button">S</button><button type="button">M</button><button type="button">L</button><button type="button">XL</button>
             </div>
             <div class="buyrow">
@@ -489,70 +469,53 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         <article class="pfeat rev">
           <div class="pmedia">
             <div class="pshot">
-              <span class="rank">02 &nbsp;/&nbsp; Performance</span>
-              <img id="img-crew" src="img/performance-crew-white-side.jpg" width="193" height="334"
-                   alt="Performance Crew in White / Larch, side view">
-              <span class="swatch">
-                <span class="duo"><i id="sw-crew" style="background:#FFFFFF"></i><i style="background:#9E4A28"></i></span>
-                <span id="way-crew">White / Larch</span>
-              </span>
+              <img id="img-crew" src="img/larch-100-white-side.jpg" width="386" height="668"
+                   alt="Larch 100 in White / Larch, side view">
             </div>
             <div class="thumbs" data-main="img-crew" data-way="white"
-                 role="group" aria-label="Performance Crew views, White / Larch">
+                 role="group" aria-label="Larch 100 views, White">
               <button type="button" class="on" aria-pressed="true"
-                      data-src="img/performance-crew-white-side.jpg" data-alt="Performance Crew in White / Larch, side view">
-                <img src="img/performance-crew-white-side.jpg" alt="Side view" loading="lazy" width="120" height="120"></button>
+                      data-src="img/larch-100-white-side.jpg" data-alt="Larch 100 in White / Larch, side view">
+                <img src="img/larch-100-white-side.jpg" alt="Side view" loading="lazy"></button>
               <button type="button" aria-pressed="false"
-                      data-src="img/performance-crew-white-front.jpg" data-alt="Performance Crew in White / Larch, front view">
-                <img src="img/performance-crew-white-front.jpg" alt="Front view" loading="lazy" width="120" height="120"></button>
-              <button type="button" aria-pressed="false"
-                      data-src="img/performance-crew-white-back.jpg" data-alt="Performance Crew in White / Larch, back view showing the three larch dashes">
-                <img src="img/performance-crew-white-back.jpg" alt="Back view" loading="lazy" width="120" height="120"></button>
-              <button type="button" aria-pressed="false"
-                      data-src="img/performance-crew-white-other.jpg" data-alt="Performance Crew in White / Larch, other side view">
-                <img src="img/performance-crew-white-other.jpg" alt="Other side" loading="lazy" width="120" height="120"></button>
+                      data-src="img/larch-100-white-back.jpg" data-alt="Larch 100 in White / Larch from behind, showing the three larch dashes on the back cuff">
+                <img src="img/larch-100-white-back.jpg" alt="Back view" loading="lazy"></button>
             </div>
             <div class="thumbs" data-main="img-crew" data-way="black" hidden
-                 role="group" aria-label="Performance Crew views, Black / Larch">
+                 role="group" aria-label="Larch 100 views, Black">
               <button type="button" class="on" aria-pressed="true"
-                      data-src="img/performance-crew-black-side.jpg" data-alt="Performance Crew in Black / Larch, side view">
-                <img src="img/performance-crew-black-side.jpg" alt="Side view" loading="lazy" width="120" height="120"></button>
+                      data-src="img/larch-100-black-side.jpg" data-alt="Larch 100 in Black / Larch, side view">
+                <img src="img/larch-100-black-side.jpg" alt="Side view" loading="lazy"></button>
               <button type="button" aria-pressed="false"
-                      data-src="img/performance-crew-black-front.jpg" data-alt="Performance Crew in Black / Larch, front view">
-                <img src="img/performance-crew-black-front.jpg" alt="Front view" loading="lazy" width="120" height="120"></button>
-              <button type="button" aria-pressed="false"
-                      data-src="img/performance-crew-black-back.jpg" data-alt="Performance Crew in Black / Larch, back view showing the three larch dashes">
-                <img src="img/performance-crew-black-back.jpg" alt="Back view" loading="lazy" width="120" height="120"></button>
-              <button type="button" aria-pressed="false"
-                      data-src="img/performance-crew-black-other.jpg" data-alt="Performance Crew in Black / Larch, other side view">
-                <img src="img/performance-crew-black-other.jpg" alt="Other side" loading="lazy" width="120" height="120"></button>
+                      data-src="img/larch-100-black-back.jpg" data-alt="Larch 100 in Black / Larch from behind, showing the three larch dashes on the back cuff">
+                <img src="img/larch-100-black-back.jpg" alt="Back view" loading="lazy"></button>
             </div>
           </div>
           <div class="pinfo">
-            <span class="eyebrow">V1 <b>Larch</b> Dash</span>
-            <h3>Performance Crew</h3>
+            <h3>Larch 100</h3>
             <p class="sub">Mid-crew · Ultralight · Running &amp; trail</p>
             <div class="lrule"></div>
-            <p class="lede">Built to move fast. Made to breathe. An open mesh knit that moves air over the whole vamp, a compression fit that locks the sock down, and three larch dashes centered on the back cuff.</p>
+            <p class="lede">Built to move fast. Made to breathe. An open mesh knit that moves air over the whole vamp, and a compression fit that locks the sock down.</p>
+            <p class="sig"><b>Three larch dashes.</b> Centered on the back cuff, in the color this valley turns for two weeks every October.</p>
             <ul class="chips">
               <li><span>Height</span><b>Mid-crew · 7–7.5" heel to cuff (M)</b></li>
               <li><span>Yarn</span><b>93% polypropylene / 7% elastane</b></li>
               <li><span>Knit</span><b>Open mesh · reinforced heel &amp; toe</b></li>
               <li><span>Finish</span><b>Seamless toe · odor resistant</b></li>
             </ul>
-            <div class="ways" id="ways-crew" role="group" aria-label="Colorway, Performance Crew"
-                 data-main="img-crew" data-dot="sw-crew" data-label="way-crew">
-              <button type="button" class="on" aria-pressed="true" data-way="white" data-name="White / Larch" data-base="#FFFFFF"
-                      data-src="img/performance-crew-white-side.jpg" data-alt="Performance Crew in White / Larch, side view">
-                <span class="duo"><i style="background:#FFFFFF"></i><i style="background:#9E4A28"></i></span>001 White
+            <div class="ways" id="ways-crew" role="group" aria-label="Colorway, Larch 100"
+                 data-main="img-crew">
+              <button type="button" class="on" aria-pressed="true" data-way="white" data-name="White" data-base="#FFFFFF"
+                      data-src="img/larch-100-white-side.jpg" data-alt="Larch 100 in White / Larch, side view">
+                <span class="duo"><i style="background:#FFFFFF"></i><i style="background:#9E4A28"></i></span>White
               </button>
-              <button type="button" aria-pressed="false" data-way="black" data-name="Black / Larch" data-base="#151719"
-                      data-src="img/performance-crew-black-side.jpg" data-alt="Performance Crew in Black / Larch, side view">
-                <span class="duo"><i style="background:#151719"></i><i style="background:#9E4A28"></i></span>002 Black
+              <button type="button" aria-pressed="false" data-way="black" data-name="Black" data-base="#151719"
+                      data-src="img/larch-100-black-side.jpg" data-alt="Larch 100 in Black / Larch, side view">
+                <span class="duo"><i style="background:#151719"></i><i style="background:#9E4A28"></i></span>Black
               </button>
             </div>
             <p class="price">$16 <small>per pair</small></p>
-            <div class="sizes" role="group" aria-label="Size, Performance Crew">
+            <div class="sizes" role="group" aria-label="Size, Larch 100">
               <button type="button">S</button><button type="button">M</button><button type="button">L</button><button type="button">XL</button>
             </div>
             <div class="buyrow">
@@ -568,14 +531,14 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
       <div class="finder" id="finder">
         <h3>Which one, and what size</h3>
         <p class="lede">Two socks split the year cleanly. Cushion when the day is long or cold, mesh when it's fast or hot.</p>
-        <div class="frow"><b>Long days under a pack</b><span>Ten miles before the interesting part. Cushion has to still be there on the way out.</span><em>200 Quarter</em></div>
-        <div class="frow"><b>Fast miles and hot afternoons</b><span>Running and trail. Every gram and every degree counts.</span><em>Performance Crew</em></div>
-        <div class="frow"><b>Talus, scree and deadfall</b><span>Sharp, loose and abrasive. High-stepping punishes a thin sock.</span><em>200 Quarter</em></div>
-        <div class="frow"><b>Snowmelt and creek crossings</b><span>Wet feet from the first melt through midsummer. Polypropylene dries fastest.</span><em>Performance Crew</em></div>
-        <div class="frow"><b>Late season and cold starts</b><span>Anything that begins before light and ends after dark.</span><em>200 Quarter</em></div>
+        <div class="frow"><b>Long days under a pack</b><span>Ten miles before the interesting part. Cushion has to still be there on the way out.</span><em>Stuart 200</em></div>
+        <div class="frow"><b>Fast miles and hot afternoons</b><span>Running and trail. Every gram and every degree counts.</span><em>Larch 100</em></div>
+        <div class="frow"><b>Talus, scree and deadfall</b><span>Sharp, loose and abrasive. High-stepping punishes a thin sock.</span><em>Stuart 200</em></div>
+        <div class="frow"><b>Snowmelt and creek crossings</b><span>Wet feet from the first melt through midsummer. Polypropylene dries fastest.</span><em>Larch 100</em></div>
+        <div class="frow"><b>Late season and cold starts</b><span>Anything that begins before light and ends after dark.</span><em>Stuart 200</em></div>
 
         <h3 style="margin-top:44px">Size run</h3>
-        <p class="lede">Unisex, four sizes, both socks. Between sizes, size down — the terry in the 200 Quarter takes up room.</p>
+        <p class="lede">Unisex, four sizes, both socks. Between sizes, size down — the terry in the Stuart 200 takes up room.</p>
         <div class="sizerun">
           <div><b>S</b><span>US 4–6.5</span></div>
           <div><b>M</b><span>US 7–9.5</span></div>
@@ -606,8 +569,8 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
                  src="https://images.unsplash.com/photo-1600100315760-ac46b65f6fdd?auto=format&amp;fit=crop&amp;w=1000&amp;q=75"
                  alt="A hiker's boots planted on bare rock">
           </figure>
-          <h3>Three dashes, one range</h3>
-          <p>Larch — the color this valley turns for two weeks every October. It marks the back cuff of every pair.</p>
+          <h3>Two marks, one range</h3>
+          <p>A mountain on the Stuart 200, three dashes on the Larch 100. Both in larch, both on the back cuff, both earned outside.</p>
           <a class="tlink" href="#ground">Read the story</a>
         </article>
         <article class="tile">
@@ -631,15 +594,15 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         <div>
           <span class="eyebrow">The build</span>
           <h2 style="margin-top:12px">Seven details, one sock</h2>
-          <p>The 200 Quarter, drawn flat. The Performance Crew shares the cuff, the arch compression, the mesh and the seam — it drops the terry and the guard to save the weight.</p>
+          <p>The Stuart 200, drawn flat. The Larch 100 shares the cuff, the arch compression, the mesh and the seam — it drops the terry and the guard to save the weight.</p>
         </div>
-        <p class="meta">200 Quarter &nbsp;·&nbsp; Body pattern &nbsp;·&nbsp; Rev. A</p>
+        <p class="meta">Stuart 200 &nbsp;·&nbsp; Body pattern &nbsp;·&nbsp; Rev. A</p>
       </div>
 
       <div class="build-grid">
         <div class="bp-panel">
           <svg class="bp" viewBox="0 0 310 345" preserveAspectRatio="xMidYMid meet" role="img"
-               aria-label="Construction drawing of the 200 Quarter with seven numbered callouts">
+               aria-label="Construction drawing of the Stuart 200 with seven numbered callouts">
             <path class="bp-line" d="M170,88 L248,88 C252,127 254,166 252,200 C256,230 262,250 250,268 C238,284 214,290 188,290 L98,290 C68,290 46,284 36,272 C28,262 30,248 44,240 C66,230 110,226 142,224 C158,223 168,219 170,206 Z"/>
             <path class="bp-zone" d="M170,88 L248,88 C251,102 252,110 252,122 L170,122 Z"/><path class="bp-zone" d="M235,150 L250,150 C253,172 254,190 252,206 L237,206 C235,188 235,170 235,150 Z"/>
             <path class="bp-zone" d="M252,202 C256,230 262,250 250,268 C240,282 220,289 196,290 C193,258 208,224 240,208 C245,205 249,203 252,202 Z"/><path class="bp-zone" d="M44,240 C58,233 72,230 88,228 L92,290 L98,290 C68,290 47,284 36,272 C28,262 30,248 44,240 Z"/>
@@ -667,8 +630,8 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
             <li><b>07</b><span><strong>Smooth toe seam</strong>Hand-linked flat, for zero irritation. You cannot find it with your toes.</span></li>
           </ol>
           <div class="blend">
-            <div><span>200 Quarter</span><b>58–60% merino / 37–39% nylon / 3% elastane</b></div>
-            <div><span>Performance Crew</span><b>93% polypropylene / 7% elastane</b></div>
+            <div><span>Stuart 200</span><b>58–60% merino / 37–39% nylon / 3% elastane</b></div>
+            <div><span>Larch 100</span><b>93% polypropylene / 7% elastane</b></div>
             <div><span>Gauge</span><b>168 needle high density</b></div>
             <div><span>Colors</span><b>Stone Heather · Graphite · Larch</b></div>
             <div><span>Care</span><b>Machine wash cold, hang dry</b></div>
@@ -727,15 +690,15 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
       <div class="reviews">
         <blockquote class="review">
           <p>Fourteen miles on Ingalls Creek, off-trail for most of it. No hot spots, no bunching, no adjusting. I forgot I was wearing them, which is the whole point.</p>
-          <cite>M. R. · Cle Elum, WA · 200 Quarter</cite>
+          <cite>M. R. · Cle Elum, WA · Stuart 200</cite>
         </blockquote>
         <blockquote class="review">
           <p>Ran them through two creek crossings in August and they were dry before the next climb. Lightest sock I own that I still trust on rock.</p>
-          <cite>J. T. · Bellingham, WA · Performance Crew</cite>
+          <cite>J. T. · Bellingham, WA · Larch 100</cite>
         </blockquote>
         <blockquote class="review">
           <p>Second season on the same pair, hunted and hiked hard in them. Toe seam is still flat and the arch band has not given up.</p>
-          <cite>D. K. · Ellensburg, WA · 200 Quarter</cite>
+          <cite>D. K. · Ellensburg, WA · Stuart 200</cite>
         </blockquote>
       </div>
     </div>
@@ -763,8 +726,8 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         <h4>Shop</h4>
         <ul>
           <li><a href="#line">All socks</a></li>
-          <li><a href="#line">200 Quarter</a></li>
-          <li><a href="#line">Performance Crew</a></li>
+          <li><a href="#line">Stuart 200</a></li>
+          <li><a href="#line">Larch 100</a></li>
           <li><a href="#finder">Which one is for me</a></li>
         </ul>
       </div>
@@ -853,16 +816,12 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
   /* colorway switcher */
   document.querySelectorAll('.ways[data-main]').forEach(function(group){
     var main   = document.getElementById(group.dataset.main);
-    var dot    = document.getElementById(group.dataset.dot);
-    var label  = document.getElementById(group.dataset.label);
     var strips = document.querySelectorAll('.thumbs[data-way]');
     group.addEventListener('click', function(e){
       var b = e.target.closest('button');
       if(!b || b.classList.contains('on')) return;
       select(group, b);
       main.src = b.dataset.src; main.alt = b.dataset.alt;
-      dot.style.background = b.dataset.base;
-      label.textContent = b.dataset.name;
       strips.forEach(function(strip){
         var mine = strip.dataset.way === b.dataset.way;
         strip.hidden = !mine;
