@@ -99,6 +99,13 @@ connected pixel region, and each background was lifted to pure white so the
 images sit on the page background under `mix-blend-mode: multiply` with no
 visible box. Change `--fog` and the frames follow; the photos need no re-export.
 
+Image URLs carry a content hash (`img/name.jpg?v=<sha1[:8]>`), stamped into the
+markup by the build step, and `vercel.json` sets `must-revalidate` on `/img/*`.
+Both exist because these six filenames get rewritten in place as better
+photography arrives — without them a browser or CDN happily serves a months-old
+crop, which is exactly what happened once. Re-run the build after replacing any
+image so the hash moves.
+
 Side views are saved at native size; the cuff-framed back views are resampled to
 1010 px tall, which is what the largest render needs at 2x. JPEG q92, no chroma
 subsampling throughout. Every image renders at 0.88–1.09x of its own pixels, so
@@ -121,7 +128,8 @@ build section, which is inline SVG built from the tech-pack geometry.
 
 ## Before launch
 
-- Prices ($22 / $16) are placeholders — the tech packs don't set them. Confirm before publishing, and update the "$32 sock priced at $22" line in the build section to match.
+- Both socks are $10. The positioning is that nothing is added to the cost for marketing, which the build section states outright — keep the "$32 sock priced at $10" line in step with the price if it ever moves.
+- "Free shipping over $35" in the promo bar is four pairs at $10. Worth a second look now that the price is set.
 - Replace the Unsplash placeholder landscape photography with real Teanaway shots and update the `src` attributes.
 - **The Larch 100 in Black still needs photography.** The other four shots came from supplied product images; Black is the last pair cropped from a tech-pack sheet, and the drop in quality is visible when the colorway is switched. Two shots, side and back, dropped in over `larch-100-black-side.jpg` and `larch-100-black-back.jpg`, and nothing else has to change.
 - **The back-cuff mark disagrees between the photography and the 200 Quarter tech pack.** The photography shows three larch dashes on both socks; the tech pack drew a Mount Stuart mountain on the 200. The site follows the photography and treats the dashes as a house mark. If the mountain is still the intent for the 200, its signature line and the "Three dashes, one range" tile both need reverting.
