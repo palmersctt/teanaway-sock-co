@@ -53,39 +53,48 @@ Two products, drawn from the current tech packs:
 | Yarn | 58–60% merino / 37–39% nylon / 3% elastane | 93% polypropylene / 7% elastane |
 | Knit | 168 needle high density | Open mesh, reinforced heel & toe |
 | Colorways | Stuart Stone (Stone Heather, Graphite, Larch) | White/Larch, Black/Larch |
-| Back-cuff mark | Mount Stuart, in larch | Three larch dashes |
+| Back-cuff mark | Three larch dashes | Three larch dashes |
 
 Both are performance socks, so the names carry the place and the cushion weight
 rather than the fibre — the tech packs' "merino" and "performance" labels would
-not have told a customer them apart. Each sock is named for the mark on its own
-back cuff, and the number is the cushion weight, continuous with the old
-100/200/300 line. Larch (`#9E4A28`) is the shared accent. Sizes are unisex
-S/M/L/XL (US 4–6.5 / 7–9.5 / 10–12.5 / 13–15).
+not have told a customer them apart. The number is the cushion weight,
+continuous with the old 100/200/300 line. Larch (`#9E4A28`) is the shared
+accent. Sizes are unisex S/M/L/XL (US 4–6.5 / 7–9.5 / 10–12.5 / 13–15).
+
+The three larch dashes are a house mark, not a per-sock one: the supplied
+product photography shows them on the back cuff of both socks. The 200 Quarter
+tech pack drew a Mount Stuart mountain there instead, so the two disagree — the
+site follows the photography. See the launch list.
 
 Product copy carries the name alone — no colorway numbers, version codes or
 rank badges, and nothing overlaid on the photography.
 
 ### Product imagery
 
-`img/` holds six shots cropped out of the two tech-pack sheets — two per sock,
-side and back:
+`img/` holds six shots — two per sock, side and back:
 
 ```
 stuart-200-side.jpg        larch-100-white-side.jpg   larch-100-black-side.jpg
 stuart-200-back.jpg        larch-100-white-back.jpg   larch-100-black-back.jpg
 ```
 
-The back view is the second shot on purpose: it is where each sock's mark sits,
-over the heel. Sheet annotations — the 5.5" dimension line, the view labels,
-body copy that fell inside the crop — were removed by keeping only the sock's
+The first four are cut from supplied product photography and are native
+resolution — 661 x 784 up to 581 x 877. **The two black shots are still cropped
+from the tech-pack sheet** and are the only low-resolution images left on the
+site, so quality drops visibly when someone switches the Larch 100 to Black.
+
+The back view is the second shot on purpose: it is where the mark sits, over the
+heel. Stray sheet content — annotations, view labels, body copy that fell inside
+a crop — was removed by keeping only the sock's
 connected pixel region, and each background was lifted to pure white so the
 images sit on the page background under `mix-blend-mode: multiply` with no
 visible box. Change `--fog` and the frames follow; the photos need no re-export.
 
-They ship resampled 3x (Lanczos, a median pass to kill the ringing that
-introduces, then unsharp) at JPEG q95 with no chroma subsampling — sized so a 3x
-phone renders them at 1.0–1.2x rather than stretching them. 488 KB for all six;
-the two black shots only load if someone picks that colorway.
+The photographed four are saved at native size, JPEG q92, no chroma
+subsampling. The two black shots, having no better source, are resampled 3x
+(Lanczos, a median pass to kill the ringing that introduces, then unsharp) at
+q95. Every image renders at roughly 1x on a 3x phone. 496 KB for all six; the
+black pair only loads if someone picks that colorway.
 
 Each product has a two-up thumbnail strip that swaps the main image. The Larch
 100's colorway buttons swap the whole strip (`.thumbs[data-way]`) and reset it
@@ -101,7 +110,9 @@ build section, which is inline SVG built from the tech-pack geometry.
 
 - Prices ($22 / $16) are placeholders — the tech packs don't set them. Confirm before publishing, and update the "$32 sock priced at $22" line in the build section to match.
 - Replace the Unsplash placeholder landscape photography with real Teanaway shots and update the `src` attributes.
-- **The product shots want replacing with the originals.** They are cropped out of two 1206 px-wide sheet screenshots, so the native crops are small — 295 x 455 px for the Stuart 200 side view, and only 111 x 257 px for its back view. Every processing trick has been applied and the ceiling is the source, not the pipeline. Dropping in the original photography (or the source PDF/design file the sheets were built from) is the only real fix; keep the same filenames and nothing else has to change. They are development samples in any case, so a proper shoot is due before launch.
+- **The Larch 100 in Black still needs photography.** The other four shots came from supplied product images; Black is the last pair cropped from a tech-pack sheet, and the drop in quality is visible when the colorway is switched. Two shots, side and back, dropped in over `larch-100-black-side.jpg` and `larch-100-black-back.jpg`, and nothing else has to change.
+- **The back-cuff mark disagrees between the photography and the 200 Quarter tech pack.** The photography shows three larch dashes on both socks; the tech pack drew a Mount Stuart mountain on the 200. The site follows the photography and treats the dashes as a house mark. If the mountain is still the intent for the 200, its signature line and the "Three dashes, one range" tile both need reverting.
+- The Stuart 200 in the supplied photography reads lower than the tech pack's drawing of it. Worth confirming the `Quarter · 5.5" heel to cuff` spec still matches the sample being shot.
 - The raw tech-pack sheets are not in this repo. Anything committed here is served publicly by Vercel, and those sheets carry OEM notes — add them only if you want them public.
 - Reviews are placeholder copy — swap in real customer quotes.
 - The page carries no country-of-origin claim and no third-party brand names, by request. The tech packs list a Coolmax® nylon for the Stuart 200, USA manufacture for it, TBD origin for the Larch 100, and Pantone references for all three colors — none of that appears on the site. Reintroduce any of it only with the licensing and substantiation to back it up.
