@@ -161,18 +161,30 @@ header.solid .nav{color:var(--ink)}
 /* ---------- the lineup ---------- */
 .pfeat{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,4vw,72px);align-items:center}
 .pfeat+.pfeat{margin-top:clamp(44px,6vw,86px);padding-top:clamp(44px,6vw,86px);border-top:1px solid var(--hair)}
-.pfeat.rev .pshot{order:2}
+.pfeat.rev .pmedia{order:2}
 @media(max-width:900px){
   .pfeat{grid-template-columns:1fr;gap:26px}
-  .pfeat.rev .pshot{order:0}
+  .pfeat.rev .pmedia{order:0}
 }
+.pmedia{display:grid;gap:8px}
 .pshot{
-  position:relative;aspect-ratio:1/1;background:var(--fog);
-  display:flex;align-items:center;justify-content:center;padding:clamp(16px,3vw,48px);overflow:hidden;
+  position:relative;aspect-ratio:1/1;max-height:520px;background:var(--fog);
+  display:flex;align-items:center;justify-content:center;padding:clamp(22px,3vw,44px);overflow:hidden;
 }
-.sec-fog .pshot{background:#fff}
-.pshot .sock{width:100%;height:100%;transition:transform .55s cubic-bezier(.2,.7,.3,1)}
-.pfeat:hover .sock{transform:scale(1.03)}
+.pshot img{
+  width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;
+  mix-blend-mode:multiply;transition:transform .55s cubic-bezier(.2,.7,.3,1);
+}
+.pfeat:hover .pshot img{transform:scale(1.03)}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:440px}
+.thumbs[hidden]{display:none}
+.thumbs button{
+  aspect-ratio:1/1;background:var(--fog);border:1px solid transparent;padding:10px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:border-color .18s ease;
+}
+.thumbs button:hover{border-color:var(--hair)}
+.thumbs button.on{border-color:var(--ink)}
+.thumbs img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply}
 .rank{
   position:absolute;top:14px;left:14px;font-family:var(--display);font-weight:500;
   font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);
@@ -336,20 +348,6 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mid)}
 .credit{margin-top:14px;font-size:11.5px;color:#9A9D9E;line-height:1.7;max-width:96ch}
 
-/* ---------- sock artwork ---------- */
-.s-body{fill:var(--sc);stroke:var(--scstroke,transparent);stroke-width:1}
-.s-dark{fill:var(--scd)}
-.s-mid{fill:var(--scm)}
-.s-cuff{fill:var(--scc)}
-.s-band{fill:var(--sca)}
-.s-mesh{fill:var(--scmesh)}
-.s-rib{stroke:var(--scrib);stroke-width:1;fill:none}
-.s-terry{stroke:var(--scterry);stroke-width:6;stroke-dasharray:2 5;fill:none;stroke-linecap:round}
-.s-guard{stroke:var(--scguard);stroke-width:3;stroke-dasharray:2 4;fill:none;stroke-linecap:round}
-.s-line{stroke:var(--scline);stroke-width:1;fill:none}
-.s-acc{fill:none;stroke:var(--larch);stroke-width:2.6;stroke-linecap:round}
-.s-acc-f{fill:var(--larch)}
-.s-txt{fill:var(--sct);font-family:'Inter Tight',sans-serif;font-size:6px;letter-spacing:.9px}
 </style>
 </head>
 <body id="top">
@@ -435,29 +433,30 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
 
         <!-- FLAGSHIP: 200 QUARTER -->
         <article class="pfeat">
-          <div class="pshot" id="shot-200" style="--sc:#A9A6A0;--scd:#4A4E4F;--scc:#9D9A94;--scm:#B8B5AF;--sca:#918E88;--sct:#E3E1DD;--scmesh:rgba(0,0,0,.26);--scrib:rgba(255,255,255,.34);--scterry:rgba(0,0,0,.2);--scline:rgba(0,0,0,.13);--scguard:rgba(0,0,0,.2)">
-            <span class="rank">01 &nbsp;/&nbsp; Flagship</span>
-            <svg class="sock" viewBox="22 14 256 306" preserveAspectRatio="xMidYMid meet" role="img" aria-label="200 Quarter midweight cushion merino sock in Stuart Stone">
-              <ellipse cx="140" cy="302" rx="104" ry="7" fill="rgba(0,0,0,.07)"/>
-              <path class="s-body" d="M170,88 L248,88 C252,127 254,166 252,200 C256,230 262,250 250,268 C238,284 214,290 188,290 L98,290 C68,290 46,284 36,272 C28,262 30,248 44,240 C66,230 110,226 142,224 C158,223 168,219 170,206 Z"/>
-              <path class="s-dark" d="M252,202 C256,230 262,250 250,268 C240,282 220,289 196,290 C193,258 208,224 240,208 C245,205 249,203 252,202 Z"/><path class="s-dark" d="M44,240 C58,233 72,230 88,228 L92,290 L98,290 C68,290 47,284 36,272 C28,262 30,248 44,240 Z"/>
-              <path class="s-band" d="M90,264 C124,272 164,272 198,258 L202,290 L92,290 Z"/>
-              <path class="s-mid" d="M235,150 L250,150 C253,172 254,190 252,206 L237,206 C235,188 235,170 235,150 Z"/>
-              <path class="s-guard" d="M239,158 L250,158 M239,168 L250,168 M239,178 L250,178 M239,188 L250,188"/>
-              <path class="s-mid" d="M88,228 C104,226 118,225 133,224 L136,250 C120,251 104,252 90,254 Z"/>
-              <circle cx="92" cy="232" r="1.15" class="s-mesh"/><circle cx="98" cy="232" r="1.15" class="s-mesh"/><circle cx="104" cy="232" r="1.15" class="s-mesh"/><circle cx="110" cy="232" r="1.15" class="s-mesh"/><circle cx="116" cy="232" r="1.15" class="s-mesh"/><circle cx="122" cy="232" r="1.15" class="s-mesh"/><circle cx="128" cy="232" r="1.15" class="s-mesh"/><circle cx="95" cy="238" r="1.15" class="s-mesh"/><circle cx="101" cy="238" r="1.15" class="s-mesh"/><circle cx="107" cy="238" r="1.15" class="s-mesh"/><circle cx="113" cy="238" r="1.15" class="s-mesh"/><circle cx="119" cy="238" r="1.15" class="s-mesh"/><circle cx="125" cy="238" r="1.15" class="s-mesh"/><circle cx="131" cy="238" r="1.15" class="s-mesh"/><circle cx="92" cy="244" r="1.15" class="s-mesh"/><circle cx="98" cy="244" r="1.15" class="s-mesh"/><circle cx="104" cy="244" r="1.15" class="s-mesh"/><circle cx="110" cy="244" r="1.15" class="s-mesh"/><circle cx="116" cy="244" r="1.15" class="s-mesh"/><circle cx="122" cy="244" r="1.15" class="s-mesh"/><circle cx="128" cy="244" r="1.15" class="s-mesh"/><circle cx="95" cy="250" r="1.15" class="s-mesh"/><circle cx="101" cy="250" r="1.15" class="s-mesh"/><circle cx="107" cy="250" r="1.15" class="s-mesh"/><circle cx="113" cy="250" r="1.15" class="s-mesh"/><circle cx="119" cy="250" r="1.15" class="s-mesh"/><circle cx="125" cy="250" r="1.15" class="s-mesh"/><circle cx="131" cy="250" r="1.15" class="s-mesh"/>
-              <path class="s-band" d="M136,224 L162,223 L172,268 L146,270 Z"/><path class="s-line" d="M144,223 L153,269 M152,223 L161,268 M160,223 L169,268"/>
-              <path class="s-terry" d="M100,272 L192,271"/><path class="s-terry" d="M98,281 L196,280"/>
-              <path class="s-cuff" d="M170,88 L248,88 C251,102 252,110 252,122 L170,122 Z"/>
-              <path class="s-rib" d="M176,94 L176,117 M183,94 L183,117 M190,94 L190,117 M197,94 L197,117 M204,94 L204,117 M211,94 L211,117 M218,94 L218,117"/>
-              <path class="s-acc-f" d="M226,114 L234,101 L240,109 L244,104 L250,114 Z"/>
-              <path class="s-acc" d="M52,240 C42,250 40,262 48,276"/>
-              <text class="s-txt" x="71" y="267" text-anchor="middle">TEANAWAY</text>
-            </svg>
-            <span class="swatch">
-              <span class="duo"><i style="background:#A9A6A0"></i><i style="background:#4A4E4F"></i><i style="background:#9E4A28"></i></span>
-              Stuart Stone
-            </span>
+          <div class="pmedia">
+            <div class="pshot">
+              <span class="rank">01 &nbsp;/&nbsp; Flagship</span>
+              <img id="img-200" src="img/200-quarter-stuart-stone.jpg" width="295" height="455"
+                   alt="200 Quarter in Stuart Stone, outside view">
+              <span class="swatch">
+                <span class="duo"><i style="background:#A9A6A0"></i><i style="background:#4A4E4F"></i><i style="background:#9E4A28"></i></span>
+                Stuart Stone
+              </span>
+            </div>
+            <div class="thumbs" data-main="img-200" role="group" aria-label="200 Quarter views">
+              <button type="button" class="on" aria-pressed="true"
+                      data-src="img/200-quarter-stuart-stone.jpg" data-alt="200 Quarter in Stuart Stone, outside view">
+                <img src="img/200-quarter-stuart-stone.jpg" alt="Outside view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/200-quarter-inside.jpg" data-alt="200 Quarter, inside view showing the arch compression">
+                <img src="img/200-quarter-inside.jpg" alt="Inside view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/200-quarter-back.jpg" data-alt="200 Quarter, back view showing the Achilles guard and the larch mountain mark">
+                <img src="img/200-quarter-back.jpg" alt="Back view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/200-quarter-sole.jpg" data-alt="200 Quarter, sole view showing the full terry cushion and reinforced heel and toe">
+                <img src="img/200-quarter-sole.jpg" alt="Sole view" loading="lazy" width="120" height="120"></button>
+            </div>
           </div>
           <div class="pinfo">
             <span class="eyebrow">Colorway 001 <b>Stuart Stone</b></span>
@@ -488,24 +487,46 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
 
         <!-- PERFORMANCE CREW -->
         <article class="pfeat rev">
-          <div class="pshot" id="shot-crew" style="--sc:#FFFFFF;--scd:#E7E6E2;--scc:#F6F5F3;--scm:#EFEEEB;--sca:#E2E1DD;--sct:#8E9091;--scmesh:rgba(0,0,0,.16);--scrib:rgba(0,0,0,.10);--scterry:rgba(0,0,0,.12);--scline:rgba(0,0,0,.09);--scguard:rgba(0,0,0,.14);--scstroke:rgba(0,0,0,.13)">
-            <span class="rank">02 &nbsp;/&nbsp; Performance</span>
-            <svg class="sock" viewBox="22 14 256 306" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Performance Crew ultralight running sock">
-              <ellipse cx="140" cy="302" rx="104" ry="7" fill="rgba(0,0,0,.07)"/>
-              <path class="s-body" d="M170,24 L248,24 C252,86 254,147 252,200 C256,230 262,250 250,268 C238,284 214,290 188,290 L98,290 C68,290 46,284 36,272 C28,262 30,248 44,240 C66,230 110,226 142,224 C158,223 168,219 170,206 Z"/>
-              <path class="s-dark" d="M252,202 C256,230 262,250 250,268 C240,282 220,289 196,290 C193,258 208,224 240,208 C245,205 249,203 252,202 Z"/><path class="s-dark" d="M44,240 C58,233 70,230 82,228 L85,290 L98,290 C68,290 47,284 36,272 C28,262 30,248 44,240 Z"/>
-              <path class="s-mid" d="M88,228 C104,226 118,225 133,224 L136,250 C120,251 104,252 90,254 Z"/>
-              <circle cx="92" cy="232" r="1.15" class="s-mesh"/><circle cx="98" cy="232" r="1.15" class="s-mesh"/><circle cx="104" cy="232" r="1.15" class="s-mesh"/><circle cx="110" cy="232" r="1.15" class="s-mesh"/><circle cx="116" cy="232" r="1.15" class="s-mesh"/><circle cx="122" cy="232" r="1.15" class="s-mesh"/><circle cx="128" cy="232" r="1.15" class="s-mesh"/><circle cx="95" cy="238" r="1.15" class="s-mesh"/><circle cx="101" cy="238" r="1.15" class="s-mesh"/><circle cx="107" cy="238" r="1.15" class="s-mesh"/><circle cx="113" cy="238" r="1.15" class="s-mesh"/><circle cx="119" cy="238" r="1.15" class="s-mesh"/><circle cx="125" cy="238" r="1.15" class="s-mesh"/><circle cx="131" cy="238" r="1.15" class="s-mesh"/><circle cx="92" cy="244" r="1.15" class="s-mesh"/><circle cx="98" cy="244" r="1.15" class="s-mesh"/><circle cx="104" cy="244" r="1.15" class="s-mesh"/><circle cx="110" cy="244" r="1.15" class="s-mesh"/><circle cx="116" cy="244" r="1.15" class="s-mesh"/><circle cx="122" cy="244" r="1.15" class="s-mesh"/><circle cx="128" cy="244" r="1.15" class="s-mesh"/><circle cx="95" cy="250" r="1.15" class="s-mesh"/><circle cx="101" cy="250" r="1.15" class="s-mesh"/><circle cx="107" cy="250" r="1.15" class="s-mesh"/><circle cx="113" cy="250" r="1.15" class="s-mesh"/><circle cx="119" cy="250" r="1.15" class="s-mesh"/><circle cx="125" cy="250" r="1.15" class="s-mesh"/><circle cx="131" cy="250" r="1.15" class="s-mesh"/>
-              <circle cx="178" cy="72" r="1.15" class="s-mesh"/><circle cx="186" cy="72" r="1.15" class="s-mesh"/><circle cx="194" cy="72" r="1.15" class="s-mesh"/><circle cx="202" cy="72" r="1.15" class="s-mesh"/><circle cx="210" cy="72" r="1.15" class="s-mesh"/><circle cx="218" cy="72" r="1.15" class="s-mesh"/><circle cx="226" cy="72" r="1.15" class="s-mesh"/><circle cx="234" cy="72" r="1.15" class="s-mesh"/><circle cx="242" cy="72" r="1.15" class="s-mesh"/><circle cx="181" cy="82" r="1.15" class="s-mesh"/><circle cx="189" cy="82" r="1.15" class="s-mesh"/><circle cx="197" cy="82" r="1.15" class="s-mesh"/><circle cx="205" cy="82" r="1.15" class="s-mesh"/><circle cx="213" cy="82" r="1.15" class="s-mesh"/><circle cx="221" cy="82" r="1.15" class="s-mesh"/><circle cx="229" cy="82" r="1.15" class="s-mesh"/><circle cx="237" cy="82" r="1.15" class="s-mesh"/><circle cx="245" cy="82" r="1.15" class="s-mesh"/><circle cx="178" cy="92" r="1.15" class="s-mesh"/><circle cx="186" cy="92" r="1.15" class="s-mesh"/><circle cx="194" cy="92" r="1.15" class="s-mesh"/><circle cx="202" cy="92" r="1.15" class="s-mesh"/><circle cx="210" cy="92" r="1.15" class="s-mesh"/><circle cx="218" cy="92" r="1.15" class="s-mesh"/><circle cx="226" cy="92" r="1.15" class="s-mesh"/><circle cx="234" cy="92" r="1.15" class="s-mesh"/><circle cx="242" cy="92" r="1.15" class="s-mesh"/><circle cx="181" cy="102" r="1.15" class="s-mesh"/><circle cx="189" cy="102" r="1.15" class="s-mesh"/><circle cx="197" cy="102" r="1.15" class="s-mesh"/><circle cx="205" cy="102" r="1.15" class="s-mesh"/><circle cx="213" cy="102" r="1.15" class="s-mesh"/><circle cx="221" cy="102" r="1.15" class="s-mesh"/><circle cx="229" cy="102" r="1.15" class="s-mesh"/><circle cx="237" cy="102" r="1.15" class="s-mesh"/><circle cx="245" cy="102" r="1.15" class="s-mesh"/><circle cx="178" cy="112" r="1.15" class="s-mesh"/><circle cx="186" cy="112" r="1.15" class="s-mesh"/><circle cx="194" cy="112" r="1.15" class="s-mesh"/><circle cx="202" cy="112" r="1.15" class="s-mesh"/><circle cx="210" cy="112" r="1.15" class="s-mesh"/><circle cx="218" cy="112" r="1.15" class="s-mesh"/><circle cx="226" cy="112" r="1.15" class="s-mesh"/><circle cx="234" cy="112" r="1.15" class="s-mesh"/><circle cx="242" cy="112" r="1.15" class="s-mesh"/><circle cx="181" cy="122" r="1.15" class="s-mesh"/><circle cx="189" cy="122" r="1.15" class="s-mesh"/><circle cx="197" cy="122" r="1.15" class="s-mesh"/><circle cx="205" cy="122" r="1.15" class="s-mesh"/><circle cx="213" cy="122" r="1.15" class="s-mesh"/><circle cx="221" cy="122" r="1.15" class="s-mesh"/><circle cx="229" cy="122" r="1.15" class="s-mesh"/><circle cx="237" cy="122" r="1.15" class="s-mesh"/><circle cx="245" cy="122" r="1.15" class="s-mesh"/><circle cx="178" cy="132" r="1.15" class="s-mesh"/><circle cx="186" cy="132" r="1.15" class="s-mesh"/><circle cx="194" cy="132" r="1.15" class="s-mesh"/><circle cx="202" cy="132" r="1.15" class="s-mesh"/><circle cx="210" cy="132" r="1.15" class="s-mesh"/><circle cx="218" cy="132" r="1.15" class="s-mesh"/><circle cx="226" cy="132" r="1.15" class="s-mesh"/><circle cx="234" cy="132" r="1.15" class="s-mesh"/><circle cx="242" cy="132" r="1.15" class="s-mesh"/><circle cx="181" cy="142" r="1.15" class="s-mesh"/><circle cx="189" cy="142" r="1.15" class="s-mesh"/><circle cx="197" cy="142" r="1.15" class="s-mesh"/><circle cx="205" cy="142" r="1.15" class="s-mesh"/><circle cx="213" cy="142" r="1.15" class="s-mesh"/><circle cx="221" cy="142" r="1.15" class="s-mesh"/><circle cx="229" cy="142" r="1.15" class="s-mesh"/><circle cx="237" cy="142" r="1.15" class="s-mesh"/><circle cx="245" cy="142" r="1.15" class="s-mesh"/><circle cx="178" cy="152" r="1.15" class="s-mesh"/><circle cx="186" cy="152" r="1.15" class="s-mesh"/><circle cx="194" cy="152" r="1.15" class="s-mesh"/><circle cx="202" cy="152" r="1.15" class="s-mesh"/><circle cx="210" cy="152" r="1.15" class="s-mesh"/><circle cx="218" cy="152" r="1.15" class="s-mesh"/><circle cx="226" cy="152" r="1.15" class="s-mesh"/><circle cx="234" cy="152" r="1.15" class="s-mesh"/><circle cx="242" cy="152" r="1.15" class="s-mesh"/><circle cx="181" cy="162" r="1.15" class="s-mesh"/><circle cx="189" cy="162" r="1.15" class="s-mesh"/><circle cx="197" cy="162" r="1.15" class="s-mesh"/><circle cx="205" cy="162" r="1.15" class="s-mesh"/><circle cx="213" cy="162" r="1.15" class="s-mesh"/><circle cx="221" cy="162" r="1.15" class="s-mesh"/><circle cx="229" cy="162" r="1.15" class="s-mesh"/><circle cx="237" cy="162" r="1.15" class="s-mesh"/><circle cx="245" cy="162" r="1.15" class="s-mesh"/><circle cx="178" cy="172" r="1.15" class="s-mesh"/><circle cx="186" cy="172" r="1.15" class="s-mesh"/><circle cx="194" cy="172" r="1.15" class="s-mesh"/><circle cx="202" cy="172" r="1.15" class="s-mesh"/><circle cx="210" cy="172" r="1.15" class="s-mesh"/><circle cx="218" cy="172" r="1.15" class="s-mesh"/><circle cx="226" cy="172" r="1.15" class="s-mesh"/><circle cx="234" cy="172" r="1.15" class="s-mesh"/><circle cx="242" cy="172" r="1.15" class="s-mesh"/><circle cx="181" cy="182" r="1.15" class="s-mesh"/><circle cx="189" cy="182" r="1.15" class="s-mesh"/><circle cx="197" cy="182" r="1.15" class="s-mesh"/><circle cx="205" cy="182" r="1.15" class="s-mesh"/><circle cx="213" cy="182" r="1.15" class="s-mesh"/><circle cx="221" cy="182" r="1.15" class="s-mesh"/><circle cx="229" cy="182" r="1.15" class="s-mesh"/><circle cx="237" cy="182" r="1.15" class="s-mesh"/><circle cx="245" cy="182" r="1.15" class="s-mesh"/><circle cx="178" cy="192" r="1.15" class="s-mesh"/><circle cx="186" cy="192" r="1.15" class="s-mesh"/><circle cx="194" cy="192" r="1.15" class="s-mesh"/><circle cx="202" cy="192" r="1.15" class="s-mesh"/><circle cx="210" cy="192" r="1.15" class="s-mesh"/><circle cx="218" cy="192" r="1.15" class="s-mesh"/><circle cx="226" cy="192" r="1.15" class="s-mesh"/><circle cx="234" cy="192" r="1.15" class="s-mesh"/><circle cx="242" cy="192" r="1.15" class="s-mesh"/>
-              <path class="s-band" d="M136,224 L162,223 L176,290 L150,290 Z"/><path class="s-line" d="M144,223 L157,290 M152,223 L165,290 M160,223 L172,290"/>
-              <path class="s-cuff" d="M170,24 L248,24 C251,38 252,46 252,58 L170,58 Z"/>
-              <path class="s-rib" d="M176,30 L176,53 M183,30 L183,53 M190,30 L190,53 M197,30 L197,53 M204,30 L204,53 M211,30 L211,53 M218,30 L218,53 M225,30 L225,53 M232,30 L232,53 M239,30 L239,53 M246,30 L246,53"/>
-              <rect class="s-acc-f" x="227" y="29" width="16" height="4" rx="1"/><rect class="s-acc-f" x="227" y="39" width="16" height="4" rx="1"/><rect class="s-acc-f" x="227" y="49" width="16" height="4" rx="1"/>
-            </svg>
-            <span class="swatch">
-              <span class="duo"><i id="sw-crew" style="background:#FFFFFF"></i><i style="background:#9E4A28"></i></span>
-              <span id="way-crew">White / Larch</span>
-            </span>
+          <div class="pmedia">
+            <div class="pshot">
+              <span class="rank">02 &nbsp;/&nbsp; Performance</span>
+              <img id="img-crew" src="img/performance-crew-white-side.jpg" width="193" height="334"
+                   alt="Performance Crew in White / Larch, side view">
+              <span class="swatch">
+                <span class="duo"><i id="sw-crew" style="background:#FFFFFF"></i><i style="background:#9E4A28"></i></span>
+                <span id="way-crew">White / Larch</span>
+              </span>
+            </div>
+            <div class="thumbs" data-main="img-crew" data-way="white"
+                 role="group" aria-label="Performance Crew views, White / Larch">
+              <button type="button" class="on" aria-pressed="true"
+                      data-src="img/performance-crew-white-side.jpg" data-alt="Performance Crew in White / Larch, side view">
+                <img src="img/performance-crew-white-side.jpg" alt="Side view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/performance-crew-white-front.jpg" data-alt="Performance Crew in White / Larch, front view">
+                <img src="img/performance-crew-white-front.jpg" alt="Front view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/performance-crew-white-back.jpg" data-alt="Performance Crew in White / Larch, back view showing the three larch dashes">
+                <img src="img/performance-crew-white-back.jpg" alt="Back view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/performance-crew-white-other.jpg" data-alt="Performance Crew in White / Larch, other side view">
+                <img src="img/performance-crew-white-other.jpg" alt="Other side" loading="lazy" width="120" height="120"></button>
+            </div>
+            <div class="thumbs" data-main="img-crew" data-way="black" hidden
+                 role="group" aria-label="Performance Crew views, Black / Larch">
+              <button type="button" class="on" aria-pressed="true"
+                      data-src="img/performance-crew-black-side.jpg" data-alt="Performance Crew in Black / Larch, side view">
+                <img src="img/performance-crew-black-side.jpg" alt="Side view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/performance-crew-black-front.jpg" data-alt="Performance Crew in Black / Larch, front view">
+                <img src="img/performance-crew-black-front.jpg" alt="Front view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/performance-crew-black-back.jpg" data-alt="Performance Crew in Black / Larch, back view showing the three larch dashes">
+                <img src="img/performance-crew-black-back.jpg" alt="Back view" loading="lazy" width="120" height="120"></button>
+              <button type="button" aria-pressed="false"
+                      data-src="img/performance-crew-black-other.jpg" data-alt="Performance Crew in Black / Larch, other side view">
+                <img src="img/performance-crew-black-other.jpg" alt="Other side" loading="lazy" width="120" height="120"></button>
+            </div>
           </div>
           <div class="pinfo">
             <span class="eyebrow">V1 <b>Larch</b> Dash</span>
@@ -520,11 +541,13 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
               <li><span>Finish</span><b>Seamless toe · odor resistant</b></li>
             </ul>
             <div class="ways" id="ways-crew" role="group" aria-label="Colorway, Performance Crew"
-                 data-shot="shot-crew" data-dot="sw-crew" data-label="way-crew">
-              <button type="button" class="on" aria-pressed="true" data-name="White / Larch" data-base="#FFFFFF" data-vars="--sc:#FFFFFF;--scd:#E7E6E2;--scc:#F6F5F3;--scm:#EFEEEB;--sca:#E2E1DD;--sct:#8E9091;--scmesh:rgba(0,0,0,.16);--scrib:rgba(0,0,0,.10);--scterry:rgba(0,0,0,.12);--scline:rgba(0,0,0,.09);--scguard:rgba(0,0,0,.14);--scstroke:rgba(0,0,0,.13)">
+                 data-main="img-crew" data-dot="sw-crew" data-label="way-crew">
+              <button type="button" class="on" aria-pressed="true" data-way="white" data-name="White / Larch" data-base="#FFFFFF"
+                      data-src="img/performance-crew-white-side.jpg" data-alt="Performance Crew in White / Larch, side view">
                 <span class="duo"><i style="background:#FFFFFF"></i><i style="background:#9E4A28"></i></span>001 White
               </button>
-              <button type="button" aria-pressed="false" data-name="Black / Larch" data-base="#151719" data-vars="--sc:#151719;--scd:#23262A;--scc:#1D2023;--scm:#2A2E32;--sca:#262A2E;--sct:#8A8C8D;--scmesh:rgba(255,255,255,.16);--scrib:rgba(255,255,255,.13);--scterry:rgba(255,255,255,.14);--scline:rgba(255,255,255,.10);--scguard:rgba(255,255,255,.16)">
+              <button type="button" aria-pressed="false" data-way="black" data-name="Black / Larch" data-base="#151719"
+                      data-src="img/performance-crew-black-side.jpg" data-alt="Performance Crew in Black / Larch, side view">
                 <span class="duo"><i style="background:#151719"></i><i style="background:#9E4A28"></i></span>002 Black
               </button>
             </div>
@@ -776,7 +799,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
       <span>© 2026 Teanaway Sock Co. · Ellensburg, Washington</span>
       <span>Privacy · Terms · Accessibility</span>
     </div>
-    <p class="credit">Placeholder photography via Unsplash, free for commercial use. Swap for real Teanaway and product shots before launch. Product art is illustrative, drawn from the tech packs — replace with real photography. Prices, reviews and the founder note are placeholder copy. The Performance Crew country of origin is still TBD; no origin claim is made for it on this page.</p>
+    <p class="credit">Placeholder photography via Unsplash, free for commercial use. Swap for real Teanaway and product shots before launch. Product photography is cropped from the V1 tech-pack sheets, so it is low resolution and the sample shown is a development sample — reshoot at full resolution before launch. The construction drawing in the build section is an illustration. Prices, reviews and the founder note are placeholder copy. The Performance Crew country of origin is still TBD; no origin claim is made for it on this page.</p>
   </div>
 </footer>
 
@@ -809,21 +832,42 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
     }
   });
 
+  function select(group, b){
+    group.querySelectorAll('button').forEach(function(x){
+      x.classList.remove('on'); x.setAttribute('aria-pressed','false');
+    });
+    b.classList.add('on'); b.setAttribute('aria-pressed','true');
+  }
+
+  /* thumbnail gallery */
+  document.querySelectorAll('.thumbs').forEach(function(strip){
+    var main = document.getElementById(strip.dataset.main);
+    strip.addEventListener('click', function(e){
+      var b = e.target.closest('button');
+      if(!b) return;
+      select(strip, b);
+      main.src = b.dataset.src; main.alt = b.dataset.alt;
+    });
+  });
+
   /* colorway switcher */
-  document.querySelectorAll('.ways[data-shot]').forEach(function(group){
-    var shot  = document.getElementById(group.dataset.shot);
-    var dot   = document.getElementById(group.dataset.dot);
-    var label = document.getElementById(group.dataset.label);
+  document.querySelectorAll('.ways[data-main]').forEach(function(group){
+    var main   = document.getElementById(group.dataset.main);
+    var dot    = document.getElementById(group.dataset.dot);
+    var label  = document.getElementById(group.dataset.label);
+    var strips = document.querySelectorAll('.thumbs[data-way]');
     group.addEventListener('click', function(e){
       var b = e.target.closest('button');
       if(!b || b.classList.contains('on')) return;
-      group.querySelectorAll('button').forEach(function(x){
-        x.classList.remove('on'); x.setAttribute('aria-pressed','false');
-      });
-      b.classList.add('on'); b.setAttribute('aria-pressed','true');
-      shot.setAttribute('style', b.dataset.vars);
+      select(group, b);
+      main.src = b.dataset.src; main.alt = b.dataset.alt;
       dot.style.background = b.dataset.base;
       label.textContent = b.dataset.name;
+      strips.forEach(function(strip){
+        var mine = strip.dataset.way === b.dataset.way;
+        strip.hidden = !mine;
+        if(mine) select(strip, strip.querySelector('button'));
+      });
     });
   });
 
