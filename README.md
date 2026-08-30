@@ -1,15 +1,24 @@
 # Teanaway Sock Co.
 
-Single-page marketing site for Teanaway Sock Co. (Cle Elum, WA). Static HTML — no build step, no dependencies.
+Single-page marketing site for Teanaway Sock Co. (Ellensburg, WA). Static HTML — no build step, no dependencies.
 
 ```
 .
-├── index.html      # the entire site (inline CSS + JS, inline SVG construction drawing)
-├── img/            # product photography, cropped from the V1 tech-pack sheets
-├── vercel.json     # clean URLs + basic security headers
+├── index.html            # the entire site (inline CSS + JS, inline SVG construction drawing)
+├── 404.html              # branded not-found page
+├── img/                  # product photography
+├── og-image.jpg          # 1200x630 link preview card
+├── favicon.svg           # the three larch dashes
+├── apple-touch-icon.png
+├── robots.txt
+├── sitemap.xml
+├── vercel.json           # clean URLs, security headers, image revalidation
 ├── .gitignore
 └── README.md
 ```
+
+Everything below the fold of this file is why things are the way they are.
+Start with **Before launch** — it is the list of what is still not done.
 
 ## Local preview
 
@@ -126,16 +135,56 @@ thing that shot exists to show.
 The only remaining illustration is the seven-callout construction drawing in the
 build section, which is inline SVG built from the tech-pack geometry.
 
+## Production status
+
+In place: canonical URL, Open Graph and Twitter cards with a generated
+`og-image.jpg`, SVG favicon and apple-touch-icon, `Organization` JSON-LD,
+`robots.txt`, `sitemap.xml`, a branded 404, a skip link, one `h1` with no
+heading-level skips, alt text on every image, and security plus cache headers
+in `vercel.json`.
+
+Removed as unshippable rather than left in place:
+
+- **The customer reviews.** Three quotes with invented initials and towns.
+  Fabricated testimonials are a legal problem on a commercial site, not just an
+  untidy one. The markup is in git history — restore it the moment there are
+  real quotes with permission to use them.
+- **The "Added to bag" confirmation.** There is no cart, so nothing should say a
+  pair was added. The buttons are left in place and inert, per your call.
+- **"You're on the list."** Same reason: nothing was stored. The form now says
+  the signup is not connected, and posts properly once you set the endpoint.
+- **The footer placeholder note**, and the header **search icon**, which linked
+  to the product list and searched nothing.
+
 ## Before launch
+
+Blocking:
+
+- **Wire the cart.** The buy buttons and the header bag are inert. Shopify Buy
+  Button or Snipcart drop into the existing buttons and size selectors.
+- **Wire the newsletter.** Set `SIGNUP_ENDPOINT` at the top of the script block
+  in `index.html` to your provider's form endpoint (Formspree, Buttondown,
+  Klaviyo). It already validates, posts JSON as `{"email": "..."}`, and handles
+  success and failure. Until it is set the form tells the visitor it is not
+  connected.
+- **Confirm the domain.** `teanawaysockco.com` is assumed by the canonical tag,
+  the Open Graph and Twitter URLs, `robots.txt` and `sitemap.xml`. If it is
+  different, change it in those four places.
+- **Replace the Unsplash landscape photography.** The hero, the mid-page
+  feature, the three editorial tiles and the story background are hot-linked
+  from `images.unsplash.com`. They are licensed for commercial use, but a live
+  storefront depending on someone else's CDN for its hero image is a real
+  risk — self-host them, or swap in your own Teanaway shots.
+- **Confirm the founder note is your words.** It reads as first person under
+  your name in the story section.
+
+Not blocking:
 
 - Both socks are $10. The positioning is that nothing is added to the cost for marketing, which the build section states outright — keep the "$32 sock priced at $10" line in step with the price if it ever moves.
 - "Free shipping over $35" in the promo bar is four pairs at $10. Worth a second look now that the price is set.
-- Replace the Unsplash placeholder landscape photography with real Teanaway shots and update the `src` attributes.
 - **The Larch 100 in Black still needs photography.** The other four shots came from supplied product images; Black is the last pair cropped from a tech-pack sheet, and the drop in quality is visible when the colorway is switched. Two shots, side and back, dropped in over `larch-100-black-side.jpg` and `larch-100-black-back.jpg`, and nothing else has to change.
 - **The back-cuff mark disagrees between the photography and the 200 Quarter tech pack.** The photography shows three larch dashes on both socks; the tech pack drew a Mount Stuart mountain on the 200. The site follows the photography and treats the dashes as a house mark. If the mountain is still the intent for the 200, its signature line and the "Three dashes, one range" tile both need reverting.
+- Add `Product` JSON-LD with real `offers` once the cart is live. It is deliberately absent now — marking a price and availability on a page that cannot sell would be wrong, and search engines flag it.
 - The raw tech-pack sheets are not in this repo. Anything committed here is served publicly by Vercel, and those sheets carry OEM notes — add them only if you want them public.
-- Reviews are placeholder copy — swap in real customer quotes.
 - The page carries no country-of-origin claim and no third-party brand names, by request. The tech packs list a Coolmax® nylon for the Stuart 200, USA manufacture for it, TBD origin for the Larch 100, and Pantone references for all three colors — none of that appears on the site. Reintroduce any of it only with the licensing and substantiation to back it up.
 - "Ships from Ellensburg, Washington" in the promo bar and the Ellensburg lines in the footer and founder note are location and fulfillment, not manufacturing. Say the word if you want those gone too.
-- The "Add to bag" buttons and newsletter form are UI only. Wire them to a real cart (Shopify Buy Button, Snipcart) and an email provider before taking orders.
-- Add a `favicon.ico` and an Open Graph image (`og:image` meta tag) for link previews.

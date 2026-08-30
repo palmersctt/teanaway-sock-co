@@ -5,6 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Teanaway Sock Co. — Stuart 200 &amp; Larch 100 | Ellensburg, WA</title>
 <meta name="description" content="Two socks for the east slope. The Stuart 200, a midweight cushion quarter, and the Larch 100, an ultralight mesh-knit crew. Both built to move fast.">
+<link rel="canonical" href="https://teanawaysockco.com/">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Teanaway Sock Co.">
+<meta property="og:url" content="https://teanawaysockco.com/">
+<meta property="og:title" content="Teanaway Sock Co. — Two socks. Two jobs.">
+<meta property="og:description" content="Two socks for the east slope. The Stuart 200, a midweight cushion quarter, and the Larch 100, an ultralight mesh-knit crew. Both built to move fast. $10 a pair.">
+<meta property="og:image" content="https://teanawaysockco.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Stuart 200 and the Larch 100 side by side">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Teanaway Sock Co. — Two socks. Two jobs.">
+<meta name="twitter:description" content="Built for broken ground. $10 a pair.">
+<meta name="twitter:image" content="https://teanawaysockco.com/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Teanaway Sock Co.",
+  "url": "https://teanawaysockco.com/",
+  "logo": "https://teanawaysockco.com/apple-touch-icon.png",
+  "description": "Performance socks built for the east slope of the Cascades.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ellensburg",
+    "addressRegion": "WA",
+    "addressCountry": "US"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -46,6 +79,11 @@ button,input{font:inherit;color:inherit}
 .hero :focus-visible,.dark :focus-visible{outline-color:#fff}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:#fff;
+  font-family:var(--display);font-size:14px;padding:12px 18px;
+}
+.skip:focus{left:0}
 
 /* ---------- type roles ---------- */
 h1,h2,h3,h4{font-family:var(--display);font-weight:500;letter-spacing:-.02em;line-height:1.06;color:var(--ink)}
@@ -305,14 +343,6 @@ header.solid .nav{color:var(--ink)}
   text-transform:uppercase;color:rgba(255,255,255,.8);white-space:nowrap}
 .places span+span::before{content:'/';color:rgba(255,255,255,.35);margin:0 12px}
 
-/* ---------- reviews ---------- */
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,48px)}
-@media(max-width:860px){.reviews{grid-template-columns:1fr}}
-.review{border-top:1px solid var(--hair);padding-top:18px}
-.review p{font-size:15px;color:var(--body-ink)}
-.review cite{display:block;margin-top:14px;font-style:normal;font-size:12px;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--mid)}
-
 /* ---------- newsletter ---------- */
 .signup-band{background:var(--fog);padding:clamp(44px,6vw,76px) 0}
 .signup-band h2{font-size:clamp(22px,2.6vw,32px)}
@@ -330,18 +360,19 @@ header.solid .nav{color:var(--ink)}
 footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,68px) 0 28px}
 .fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
 @media(max-width:760px){.fgrid{grid-template-columns:repeat(2,1fr);gap:32px 20px}}
-.fgrid h4{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
+.fgrid h3{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);
   font-weight:500;margin-bottom:14px}
 .fgrid ul{list-style:none;display:grid;gap:9px}
 .fgrid a{font-size:14px;color:var(--mid);transition:color .16s}
 .fgrid a:hover{color:var(--ink)}
 .legal{margin-top:clamp(32px,4vw,56px);padding-top:18px;border-top:1px solid var(--hair);
   display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--mid)}
-.credit{margin-top:14px;font-size:11.5px;color:#9A9D9E;line-height:1.7;max-width:96ch}
 
 </style>
 </head>
 <body id="top">
+
+<a class="skip" href="#line">Skip to the socks</a>
 
 <div class="promo">Free shipping over $35 <span>&nbsp;·&nbsp;</span> Ships from Ellensburg, Washington</div>
 
@@ -358,9 +389,6 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
       <li><a href="#finder">Sizing</a></li>
     </ul>
     <div class="utils">
-      <a href="#line" aria-label="Search">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21" stroke-linecap="round"/></svg>
-      </a>
       <a href="#line">Bag (0)</a>
     </div>
   </div>
@@ -678,32 +706,6 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <span class="eyebrow">Field notes</span>
-          <h2 style="margin-top:12px">From people who are out there</h2>
-        </div>
-      </div>
-      <div class="reviews">
-        <blockquote class="review">
-          <p>Fourteen miles on Ingalls Creek, off-trail for most of it. No hot spots, no bunching, no adjusting. I forgot I was wearing them, which is the whole point.</p>
-          <cite>M. R. · Cle Elum, WA · Stuart 200</cite>
-        </blockquote>
-        <blockquote class="review">
-          <p>Ran them through two creek crossings in August and they were dry before the next climb. Lightest sock I own that I still trust on rock.</p>
-          <cite>J. T. · Bellingham, WA · Larch 100</cite>
-        </blockquote>
-        <blockquote class="review">
-          <p>Second season on the same pair, hunted and hiked hard in them. Toe seam is still flat and the arch band has not given up.</p>
-          <cite>D. K. · Ellensburg, WA · Stuart 200</cite>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
   <!-- SIGNUP -->
   <section class="signup-band" id="signup">
     <div class="wrap">
@@ -723,7 +725,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <h4>Shop</h4>
+        <h3>Shop</h3>
         <ul>
           <li><a href="#line">All socks</a></li>
           <li><a href="#line">Stuart 200</a></li>
@@ -732,7 +734,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         </ul>
       </div>
       <div>
-        <h4>Help</h4>
+        <h3>Help</h3>
         <ul>
           <li><a href="#finder">Sizing</a></li>
           <li><a href="#build">Materials and care</a></li>
@@ -741,7 +743,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         </ul>
       </div>
       <div>
-        <h4>About</h4>
+        <h3>About</h3>
         <ul>
           <li><a href="#ground">The Teanaway</a></li>
           <li><a href="#build">How they're made</a></li>
@@ -750,7 +752,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         </ul>
       </div>
       <div>
-        <h4>Follow</h4>
+        <h3>Follow</h3>
         <ul>
           <li><a href="#top">Instagram</a></li>
           <li><a href="#top">YouTube</a></li>
@@ -762,7 +764,6 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
       <span>© 2026 Teanaway Sock Co. · Ellensburg, Washington</span>
       <span>Privacy · Terms · Accessibility</span>
     </div>
-    <p class="credit">Placeholder photography via Unsplash, free for commercial use. Swap for real Teanaway and product shots before launch. Product photography is cropped from the V1 tech-pack sheets, so it is low resolution and the sample shown is a development sample — reshoot at full resolution before launch. The construction drawing in the build section is an illustration. Prices, reviews and the founder note are placeholder copy.</p>
   </div>
 </footer>
 
@@ -851,18 +852,42 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
     });
   });
 
-  document.querySelectorAll('.add').forEach(function(b){
-    b.addEventListener('click', function(){
-      var label = b.textContent;
-      b.textContent = 'Added to bag';
-      setTimeout(function(){ b.textContent = label; }, 1400);
-    });
-  });
+  /* The bag is not wired yet, so the buy buttons do nothing rather than
+     confirming an add that did not happen. Wire them to a real cart
+     (Shopify Buy Button, Snipcart) before launch. */
+
+  /* Newsletter. Point SIGNUP_ENDPOINT at your provider's form endpoint and
+     this posts to it; until then the form never claims to have stored an
+     address it did not store. */
+  var SIGNUP_ENDPOINT = '';
 
   document.getElementById('join').addEventListener('click', function(){
-    var v = document.getElementById('email').value.trim();
-    document.getElementById('msg').textContent =
-      /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) ? "You're on the list." : 'Enter an email address to sign up.';
+    var input = document.getElementById('email');
+    var msg   = document.getElementById('msg');
+    var v     = input.value.trim();
+
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)){
+      msg.textContent = 'Enter an email address to sign up.';
+      input.focus();
+      return;
+    }
+    if(!SIGNUP_ENDPOINT){
+      console.error('Newsletter: SIGNUP_ENDPOINT is unset — "' + v + '" was not stored.');
+      msg.textContent = 'Email signup is not connected yet.';
+      return;
+    }
+    msg.textContent = 'One moment…';
+    fetch(SIGNUP_ENDPOINT, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify({email: v})
+    }).then(function(r){
+      if(!r.ok) throw new Error(r.status);
+      msg.textContent = "You're on the list.";
+      input.value = '';
+    }).catch(function(){
+      msg.textContent = 'That did not go through. Try again in a moment.';
+    });
   });
 })();
 </script>

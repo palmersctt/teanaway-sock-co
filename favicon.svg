@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Teanaway Sock Co.">
+  <rect width="32" height="32" rx="6" fill="#0B0B0B"/>
+  <g fill="#9E4A28">
+    <rect x="9.5" y="8" width="13" height="3.4" rx="1.1"/>
+    <rect x="9.5" y="14.3" width="13" height="3.4" rx="1.1"/>
+    <rect x="9.5" y="20.6" width="13" height="3.4" rx="1.1"/>
+  </g>
+</svg>
