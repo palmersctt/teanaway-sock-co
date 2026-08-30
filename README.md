@@ -55,6 +55,11 @@ Two products, drawn from the current tech packs:
 | Colorways | Stuart Stone (Stone Heather, Graphite, Larch) | White/Larch, Black/Larch |
 | Back-cuff mark | Three larch dashes | Three larch dashes |
 
+*The Stuart 200 is 5.5" heel to cuff. Its photography is deliberately shot
+longer than that so the sock does not read as ankle height — measuring the
+shot against the Larch 100 implies 6.3–6.7", which is the render, not the
+spec. Do not "correct" the 5.5".*
+
 Both are performance socks, so the names carry the place and the cushion weight
 rather than the fibre — the tech packs' "merino" and "performance" labels would
 not have told a customer them apart. The number is the cushion weight,
@@ -112,7 +117,6 @@ build section, which is inline SVG built from the tech-pack geometry.
 - Replace the Unsplash placeholder landscape photography with real Teanaway shots and update the `src` attributes.
 - **The Larch 100 in Black still needs photography.** The other four shots came from supplied product images; Black is the last pair cropped from a tech-pack sheet, and the drop in quality is visible when the colorway is switched. Two shots, side and back, dropped in over `larch-100-black-side.jpg` and `larch-100-black-back.jpg`, and nothing else has to change.
 - **The back-cuff mark disagrees between the photography and the 200 Quarter tech pack.** The photography shows three larch dashes on both socks; the tech pack drew a Mount Stuart mountain on the 200. The site follows the photography and treats the dashes as a house mark. If the mountain is still the intent for the 200, its signature line and the "Three dashes, one range" tile both need reverting.
-- The Stuart 200 in the supplied photography reads lower than the tech pack's drawing of it. Worth confirming the `Quarter · 5.5" heel to cuff` spec still matches the sample being shot.
 - The raw tech-pack sheets are not in this repo. Anything committed here is served publicly by Vercel, and those sheets carry OEM notes — add them only if you want them public.
 - Reviews are placeholder copy — swap in real customer quotes.
 - The page carries no country-of-origin claim and no third-party brand names, by request. The tech packs list a Coolmax® nylon for the Stuart 200, USA manufacture for it, TBD origin for the Larch 100, and Pantone references for all three colors — none of that appears on the site. Reintroduce any of it only with the licensing and substantiation to back it up.
