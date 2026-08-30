@@ -168,7 +168,7 @@ header.solid .nav{color:var(--ink)}
 }
 .pmedia{display:grid;gap:8px}
 .pshot{
-  position:relative;aspect-ratio:1/1;max-height:520px;background:var(--fog);
+  position:relative;aspect-ratio:1/1;max-height:520px;background:var(--fog);scroll-margin-top:112px;
   display:flex;align-items:center;justify-content:center;padding:clamp(22px,3vw,44px);overflow:hidden;
 }
 .pshot img{
@@ -426,7 +426,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         <article class="pfeat">
           <div class="pmedia">
             <div class="pshot">
-              <img id="img-200" src="img/stuart-200-side.jpg" width="590" height="910"
+              <img id="img-200" src="img/stuart-200-side.jpg" width="885" height="1365"
                    alt="Stuart 200 in Stuart Stone, outside view">
             </div>
             <div class="thumbs" data-main="img-200" role="group" aria-label="Stuart 200 views">
@@ -469,7 +469,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
         <article class="pfeat rev">
           <div class="pmedia">
             <div class="pshot">
-              <img id="img-crew" src="img/larch-100-white-side.jpg" width="386" height="668"
+              <img id="img-crew" src="img/larch-100-white-side.jpg" width="579" height="1002"
                    alt="Larch 100 in White / Larch, side view">
             </div>
             <div class="thumbs" data-main="img-crew" data-way="white"
@@ -795,6 +795,17 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
     }
   });
 
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* the header is fixed, so a freshly swapped view can sit underneath it —
+     on a phone that hides the back cuff, which is the whole point of that shot */
+  function reveal(el){
+    var safe = hdr.getBoundingClientRect().bottom + 16;
+    var r = el.getBoundingClientRect();
+    if(r.top >= safe && r.bottom <= window.innerHeight) return;
+    window.scrollBy({top: r.top - safe, left: 0, behavior: reduceMotion ? 'auto' : 'smooth'});
+  }
+
   function select(group, b){
     group.querySelectorAll('button').forEach(function(x){
       x.classList.remove('on'); x.setAttribute('aria-pressed','false');
@@ -810,6 +821,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
       if(!b) return;
       select(strip, b);
       main.src = b.dataset.src; main.alt = b.dataset.alt;
+      reveal(main.parentElement);
     });
   });
 
@@ -822,6 +834,7 @@ footer{background:#fff;border-top:1px solid var(--hair);padding:clamp(40px,5vw,6
       if(!b || b.classList.contains('on')) return;
       select(group, b);
       main.src = b.dataset.src; main.alt = b.dataset.alt;
+      reveal(main.parentElement);
       strips.forEach(function(strip){
         var mine = strip.dataset.way === b.dataset.way;
         strip.hidden = !mine;

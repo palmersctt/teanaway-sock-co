@@ -82,9 +82,17 @@ connected pixel region, and each background was lifted to pure white so the
 images sit on the page background under `mix-blend-mode: multiply` with no
 visible box. Change `--fog` and the frames follow; the photos need no re-export.
 
+They ship resampled 3x (Lanczos, a median pass to kill the ringing that
+introduces, then unsharp) at JPEG q95 with no chroma subsampling — sized so a 3x
+phone renders them at 1.0–1.2x rather than stretching them. 488 KB for all six;
+the two black shots only load if someone picks that colorway.
+
 Each product has a two-up thumbnail strip that swaps the main image. The Larch
 100's colorway buttons swap the whole strip (`.thumbs[data-way]`) and reset it
-to the side view.
+to the side view. Selecting a view calls `reveal()`, which scrolls the frame
+clear of the fixed header if it is sitting underneath it — without that, tapping
+the back view on a phone hides the back cuff behind the header, which is the one
+thing that shot exists to show.
 
 The only remaining illustration is the seven-callout construction drawing in the
 build section, which is inline SVG built from the tech-pack geometry.
@@ -93,7 +101,7 @@ build section, which is inline SVG built from the tech-pack geometry.
 
 - Prices ($22 / $16) are placeholders — the tech packs don't set them. Confirm before publishing, and update the "$32 sock priced at $22" line in the build section to match.
 - Replace the Unsplash placeholder landscape photography with real Teanaway shots and update the `src` attributes.
-- The product shots in `img/` are cropped from the tech-pack sheets and show development samples. Native crops top out at 295 x 455 px (the Stuart 200 side view) and 111 x 257 px (its back view); they ship resampled 2x with Lanczos and a light unsharp so browsers are not left to upscale them, but the detail is not really there. Reshoot at full resolution before launch and drop the new files in over the same filenames.
+- **The product shots want replacing with the originals.** They are cropped out of two 1206 px-wide sheet screenshots, so the native crops are small — 295 x 455 px for the Stuart 200 side view, and only 111 x 257 px for its back view. Every processing trick has been applied and the ceiling is the source, not the pipeline. Dropping in the original photography (or the source PDF/design file the sheets were built from) is the only real fix; keep the same filenames and nothing else has to change. They are development samples in any case, so a proper shoot is due before launch.
 - The raw tech-pack sheets are not in this repo. Anything committed here is served publicly by Vercel, and those sheets carry OEM notes — add them only if you want them public.
 - Reviews are placeholder copy — swap in real customer quotes.
 - The page carries no country-of-origin claim and no third-party brand names, by request. The tech packs list a Coolmax® nylon for the Stuart 200, USA manufacture for it, TBD origin for the Larch 100, and Pantone references for all three colors — none of that appears on the site. Reintroduce any of it only with the licensing and substantiation to back it up.
