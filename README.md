@@ -50,12 +50,11 @@ Two products, drawn from the current tech packs:
 |---|---|---|
 | Height | Quarter, 5.5" heel to cuff | Mid-crew, 7–7.5" heel to cuff (M) |
 | Weight | Midweight cushion | Ultralight |
-| Yarn | 58–60% merino / 37–39% nylon (Coolmax®) / 3% elastane | 93% polypropylene / 7% elastane |
+| Yarn | 58–60% merino / 37–39% nylon / 3% elastane | 93% polypropylene / 7% elastane |
 | Knit | 168 needle high density | Open mesh, reinforced heel & toe |
-| Colorways | 001 Stuart Stone (Stone Heather 415C, Graphite 425C, Larch 7586C) | 001 White/Larch, 002 Black/Larch |
-| Origin | USA | TBD |
+| Colorways | 001 Stuart Stone (Stone Heather, Graphite, Larch) | 001 White/Larch, 002 Black/Larch |
 
-Larch (Pantone 7586C, `#9E4A28`) is the shared accent: a mountain mark on the
+Larch (`#9E4A28`) is the shared accent: a mountain mark on the
 200's cuff, three dashes on the crew's back cuff. Sizes are unisex S/M/L/XL
 (US 4–6.5 / 7–9.5 / 10–12.5 / 13–15).
 
@@ -83,6 +82,7 @@ build section, which is inline SVG built from the tech-pack geometry.
 - The product shots in `img/` are cropped from the tech-pack sheets, so they top out around 300 x 455 px and show development samples. Reshoot at full resolution before launch and drop the new files in over the same filenames.
 - The raw tech-pack sheets are not in this repo. Anything committed here is served publicly by Vercel, and those sheets carry OEM notes — add them only if you want them public.
 - Reviews are placeholder copy — swap in real customer quotes.
-- The Performance Crew's country of origin is TBD in the tech pack, so the page makes no origin claim for it. Add one when it's confirmed.
+- The page carries no country-of-origin claim and no third-party brand names, by request. The tech packs list a Coolmax® nylon for the 200 Quarter, USA manufacture for it, TBD origin for the crew, and Pantone references for all three colors — none of that appears on the site. Reintroduce any of it only with the licensing and substantiation to back it up.
+- "Ships from Ellensburg, Washington" in the promo bar and the Ellensburg lines in the footer and founder note are location and fulfillment, not manufacturing. Say the word if you want those gone too.
 - The "Add to bag" buttons and newsletter form are UI only. Wire them to a real cart (Shopify Buy Button, Snipcart) and an email provider before taking orders.
 - Add a `favicon.ico` and an Open Graph image (`og:image` meta tag) for link previews.
